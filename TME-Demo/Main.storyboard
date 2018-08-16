@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,13 +78,60 @@
                     <view key="view" contentMode="scaleToFill" id="dau-Ry-sYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4k3-A8-Zan">
+                                <rect key="frame" x="87.5" y="80" width="200" height="189.5"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4k3-A8-Zan" secondAttribute="height" multiplier="227:215" id="HJn-Ep-OyU"/>
+                                    <constraint firstAttribute="width" constant="200" id="guq-ln-Zqt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-mv-cCO">
+                                <rect key="frame" x="20" y="309.5" width="335" height="60"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mRX-UZ-7Ob"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plM-wJ-1ve">
+                                <rect key="frame" x="20" y="409.5" width="335" height="60"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="O8A-F6-E33"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4k3-A8-Zan" firstAttribute="centerX" secondItem="sJP-mv-cCO" secondAttribute="centerX" id="6Yr-kE-R5q"/>
+                            <constraint firstItem="qse-WU-49C" firstAttribute="trailing" secondItem="sJP-mv-cCO" secondAttribute="trailing" constant="20" id="BBY-q9-Q8B"/>
+                            <constraint firstItem="sJP-mv-cCO" firstAttribute="top" secondItem="4k3-A8-Zan" secondAttribute="bottom" constant="40" id="HIh-RI-8On"/>
+                            <constraint firstItem="plM-wJ-1ve" firstAttribute="top" secondItem="sJP-mv-cCO" secondAttribute="bottom" constant="40" id="O2t-RX-XaB"/>
+                            <constraint firstItem="qse-WU-49C" firstAttribute="trailing" secondItem="plM-wJ-1ve" secondAttribute="trailing" constant="20" id="bHj-MD-4nC"/>
+                            <constraint firstItem="plM-wJ-1ve" firstAttribute="top" secondItem="sJP-mv-cCO" secondAttribute="bottom" constant="40" id="c5Y-FQ-dDc"/>
+                            <constraint firstItem="4k3-A8-Zan" firstAttribute="top" secondItem="qse-WU-49C" secondAttribute="top" constant="60" id="kh8-pQ-23K"/>
+                            <constraint firstItem="plM-wJ-1ve" firstAttribute="leading" secondItem="qse-WU-49C" secondAttribute="leading" constant="20" id="sNF-VO-RZP"/>
+                            <constraint firstItem="sJP-mv-cCO" firstAttribute="top" secondItem="4k3-A8-Zan" secondAttribute="bottom" constant="40" id="tUd-Qg-qJC"/>
+                            <constraint firstItem="sJP-mv-cCO" firstAttribute="leading" secondItem="qse-WU-49C" secondAttribute="leading" constant="20" id="w3X-0v-pGh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qse-WU-49C"/>
                     </view>
+                    <connections>
+                        <outlet property="idLabel" destination="plM-wJ-1ve" id="44J-Cc-Y7m"/>
+                        <outlet property="imageView" destination="4k3-A8-Zan" id="WDQ-mz-5bb"/>
+                        <outlet property="titleLabel" destination="sJP-mv-cCO" id="jco-qS-nFt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUg-OQ-4gA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999" y="132"/>
+            <point key="canvasLocation" x="2997.5999999999999" y="131.78410794602701"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WTM-J5-Gk3">
@@ -104,4 +152,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default.jpg" width="246" height="246"/>
+    </resources>
 </document>

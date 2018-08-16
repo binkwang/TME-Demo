@@ -66,4 +66,27 @@ class TMEDataParser {
             completion(nil, "Data Error")
         }
     }
+    
+    func parseListingDetailResponse(_ data: Data?, _ error: Error?, completion: @escaping (TMESingleListingDetail?, String?) -> Void) -> Void {
+        if let data = data {
+            do {
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+                
+                if let dictionary = dictionary {
+                    let singleListingDetail = TMESingleListingDetail.init(with: dictionary)
+                    completion(singleListingDetail, nil)
+                }
+                else {
+                    completion(nil, "Data Error")
+                }
+            } catch let error as NSError {
+                print(error)
+                completion(nil, "Data Error")
+            }
+        }
+        else if let error = error {
+            print(error)
+            completion(nil, "Data Error")
+        }
+    }
 }

@@ -14,7 +14,6 @@ class TMEListingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let parser = TMEDataParser()
     var listings: [TMESingleListing]? {
         didSet {
             DispatchQueue.main.async {
@@ -28,16 +27,17 @@ class TMEListingViewController: UIViewController {
     
     var category: TMECategory? {
         didSet {
+            let parser = TMEDataParser()
             let requester = TMEDataRequester()
             requester.fetchListing(category?.id) { (data, response, error) -> Void in
-                self.parser.parseListingSearchResponse(data, error, completion: { (listings, errString) in
+                parser.parseListingSearchResponse(data, error, completion: { (listings, errString) in
                     self.listings = listings
                     if let listings = self.listings {
                         print("listings.count: \(listings.count)")
                     }
                     else if let errString = errString {
                         print("errString: \(errString)")
-                        self.showAlert("ERROR", "errString")
+                        self.showAlert("ERROR", "\(errString)")
                     }
                 })
             }
@@ -64,7 +64,6 @@ class TMEListingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -86,21 +85,14 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.section as Any, indexPath.row as Any)
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-//            //--- TODO: show listing
-//            if let listingViewController = storyboard.instantiateViewController(withIdentifier: kListingViewControllerIdentifier) as? ListingViewController {
-//                listingViewController.category = category?.subcategories[indexPath.row]
-//                self.navigationController?.pushViewController(listingViewController, animated: true)
-//            }
-//        }
-//        else {
-//            if let categoryViewController = storyboard.instantiateViewController(withIdentifier: kCategoryViewControllerIdentifier) as? CategoryViewController {
-//                categoryViewController.category = category?.subcategories[indexPath.row]
-//                categoryViewController.isRootCategoryView = false
-//                self.navigationController?.pushViewController(categoryViewController, animated: true)
-//            }
-//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if let detailViewController = storyboard.instantiateViewController(withIdentifier: kTMEDetailViewControllerIdentifier) as? TMEDetailViewController {
+            if let listings = listings {
+                detailViewController.listingId = listings[indexPath.row].listingId
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

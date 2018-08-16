@@ -43,7 +43,7 @@ struct TMECategory {
 }
 
 
-/** Json Simple
+/** Json Example
 {
     Name: "Root",
     Number: "",

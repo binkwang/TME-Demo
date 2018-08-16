@@ -16,16 +16,10 @@ class TMEListingTableViewCell: UITableViewCell {
     var singleListing: TMESingleListing? {
         didSet {
             if let title = singleListing?.title, let id = singleListing?.listingId {
-                titleLabel.text = "title: \(title)"
-                idLabel.text = "id: \(id)"
+                titleLabel.text = "\(title)"
+                idLabel.text = "\(id)"
+                pictureImageView.renderImage(imageUrl: singleListing?.pictureHref)
             }
-            singleListing?.getImage(url: singleListing?.pictureHref, completion: { (data, response, error) -> Void in
-                if let data = data {
-                    DispatchQueue.main.async {
-                        self.pictureImageView.image = UIImage(data: data)
-                    }
-                }
-            })
         }
     }
     

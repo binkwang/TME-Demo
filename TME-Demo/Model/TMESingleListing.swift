@@ -51,7 +51,7 @@ struct TMESingleListing {
     }
 }
 
-/** Json Simple
+/** Json Example
 {
     "ListingId": 6866235,
     "Title": "Mens Fashionista Overcoat - L",
