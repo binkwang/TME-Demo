@@ -15,14 +15,14 @@
 		238301702124638F0075302B /* TME_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383016F2124638F0075302B /* TME_DemoUITests.swift */; };
 		2383017E212463FB0075302B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2383017D212463FB0075302B /* Main.storyboard */; };
 		238301812124647C0075302B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 238301802124647C0075302B /* arrow.png */; };
-		23830185212464990075302B /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23830183212464990075302B /* CategoryTableViewCell.xib */; };
-		23830186212464990075302B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830184212464990075302B /* CategoryTableViewCell.swift */; };
-		2383018A212464B10075302B /* SingleListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830188212464B10075302B /* SingleListing.swift */; };
-		2383018B212464B10075302B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830189212464B10075302B /* Category.swift */; };
+		23830185212464990075302B /* TMECategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23830183212464990075302B /* TMECategoryTableViewCell.xib */; };
+		23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830184212464990075302B /* TMECategoryTableViewCell.swift */; };
+		2383018A212464B10075302B /* TMESingleListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830188212464B10075302B /* TMESingleListing.swift */; };
+		2383018B212464B10075302B /* TMECategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830189212464B10075302B /* TMECategory.swift */; };
 		2383018F212464E90075302B /* String+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383018D212464E90075302B /* String+TME.swift */; };
 		23830190212464E90075302B /* UIViewController+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383018E212464E90075302B /* UIViewController+TME.swift */; };
-		23830194212465060075302B /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830192212465060075302B /* DataParser.swift */; };
-		23830195212465060075302B /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830193212465060075302B /* DataRequester.swift */; };
+		23830194212465060075302B /* TMEDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830192212465060075302B /* TMEDataParser.swift */; };
+		23830195212465060075302B /* TMEDataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830193212465060075302B /* TMEDataRequester.swift */; };
 		238301982124651D0075302B /* TMEDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301962124651D0075302B /* TMEDetailViewController.swift */; };
 		238301992124651D0075302B /* TMEListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301972124651D0075302B /* TMEListingViewController.swift */; };
 		238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383019E21250BB10075302B /* TMEListingTableViewCell.swift */; };
@@ -62,14 +62,14 @@
 		238301712124638F0075302B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2383017D212463FB0075302B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		238301802124647C0075302B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		23830183212464990075302B /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
-		23830184212464990075302B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		23830188212464B10075302B /* SingleListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListing.swift; sourceTree = "<group>"; };
-		23830189212464B10075302B /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		23830183212464990075302B /* TMECategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMECategoryTableViewCell.xib; sourceTree = "<group>"; };
+		23830184212464990075302B /* TMECategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategoryTableViewCell.swift; sourceTree = "<group>"; };
+		23830188212464B10075302B /* TMESingleListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMESingleListing.swift; sourceTree = "<group>"; };
+		23830189212464B10075302B /* TMECategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategory.swift; sourceTree = "<group>"; };
 		2383018D212464E90075302B /* String+TME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+TME.swift"; sourceTree = "<group>"; };
 		2383018E212464E90075302B /* UIViewController+TME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TME.swift"; sourceTree = "<group>"; };
-		23830192212465060075302B /* DataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
-		23830193212465060075302B /* DataRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
+		23830192212465060075302B /* TMEDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDataParser.swift; sourceTree = "<group>"; };
+		23830193212465060075302B /* TMEDataRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDataRequester.swift; sourceTree = "<group>"; };
 		238301962124651D0075302B /* TMEDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDetailViewController.swift; sourceTree = "<group>"; };
 		238301972124651D0075302B /* TMEListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEListingViewController.swift; sourceTree = "<group>"; };
 		2383019E21250BB10075302B /* TMEListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEListingTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		238301822124648D0075302B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				23830184212464990075302B /* CategoryTableViewCell.swift */,
-				23830183212464990075302B /* CategoryTableViewCell.xib */,
+				23830184212464990075302B /* TMECategoryTableViewCell.swift */,
+				23830183212464990075302B /* TMECategoryTableViewCell.xib */,
 				2383019E21250BB10075302B /* TMEListingTableViewCell.swift */,
 				2383019F21250BB10075302B /* TMEListingTableViewCell.xib */,
 			);
@@ -183,8 +183,8 @@
 		23830187212464A90075302B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23830189212464B10075302B /* Category.swift */,
-				23830188212464B10075302B /* SingleListing.swift */,
+				23830189212464B10075302B /* TMECategory.swift */,
+				23830188212464B10075302B /* TMESingleListing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 		23830191212464FD0075302B /* RemoteService */ = {
 			isa = PBXGroup;
 			children = (
-				23830193212465060075302B /* DataRequester.swift */,
-				23830192212465060075302B /* DataParser.swift */,
+				23830193212465060075302B /* TMEDataRequester.swift */,
+				23830192212465060075302B /* TMEDataParser.swift */,
 			);
 			path = RemoteService;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2383017E212463FB0075302B /* Main.storyboard in Resources */,
-				23830185212464990075302B /* CategoryTableViewCell.xib in Resources */,
+				23830185212464990075302B /* TMECategoryTableViewCell.xib in Resources */,
 				238301A321251B0F0075302B /* default.jpg in Resources */,
 				2383015A2124638F0075302B /* LaunchScreen.storyboard in Resources */,
 				238301A121250BB10075302B /* TMEListingTableViewCell.xib in Resources */,
@@ -346,13 +346,13 @@
 				238301522124638E0075302B /* TMECategoryViewController.swift in Sources */,
 				238301992124651D0075302B /* TMEListingViewController.swift in Sources */,
 				238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */,
-				23830194212465060075302B /* DataParser.swift in Sources */,
-				2383018B212464B10075302B /* Category.swift in Sources */,
+				23830194212465060075302B /* TMEDataParser.swift in Sources */,
+				2383018B212464B10075302B /* TMECategory.swift in Sources */,
 				238301502124638E0075302B /* AppDelegate.swift in Sources */,
-				23830195212465060075302B /* DataRequester.swift in Sources */,
-				2383018A212464B10075302B /* SingleListing.swift in Sources */,
+				23830195212465060075302B /* TMEDataRequester.swift in Sources */,
+				2383018A212464B10075302B /* TMESingleListing.swift in Sources */,
 				238301982124651D0075302B /* TMEDetailViewController.swift in Sources */,
-				23830186212464990075302B /* CategoryTableViewCell.swift in Sources */,
+				23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */,
 				2383018F212464E90075302B /* String+TME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  TMECategory.swift
 //  TM-Demo
 //
 //  Created by Bink Wang on 8/16/18.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Category {
+struct TMECategory {
     var name: String?
     var number: String? //--- format: 0001-0268-0269-
     var id: String? //--- used for listing searching, format: 0269
     var path: String?
     var isLeaf: Bool?
-    var subcategories: [Category] = []
+    var subcategories: [TMECategory] = []
     
     init() {}
     
@@ -36,7 +36,7 @@ struct Category {
         
         let subcategoryArr = dictionary["Subcategories"] as? [[String: Any]]
         subcategoryArr?.forEach({ (subcategoryDic) in
-            let subcategory = Category(with: subcategoryDic)
+            let subcategory = TMECategory(with: subcategoryDic)
             subcategories.append(subcategory)
         })
     }

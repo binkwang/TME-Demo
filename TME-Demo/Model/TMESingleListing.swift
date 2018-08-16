@@ -1,5 +1,5 @@
 //
-//  SingleListing.swift
+//  TMESingleListing.swift
 //  TM-Demo
 //
 //  Created by Bink Wang on 8/16/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SingleListing {
+struct TMESingleListing {
     var listingId: Int? //--- format: 6866235
     var title: String?
     var subtitle: String?

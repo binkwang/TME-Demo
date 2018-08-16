@@ -15,11 +15,11 @@ class TMECategoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //--- TODO: make singleton
-    let requester = DataRequester()
-    let parser = DataParser()
+    let requester = TMEDataRequester()
+    let parser = TMEDataParser()
     
     var isRootCategoryView: Bool = true
-    private var category: Category? {
+    private var category: TMECategory? {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -37,8 +37,8 @@ class TMECategoryViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = UIColor.gray
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        let nib = UINib.init(nibName: kCategoryTableViewCellNibName, bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: kCategoryTableViewCellReuseIdentifier)
+        let nib = UINib.init(nibName: kTMECategoryTableViewCellNibName, bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
             requester.fetchCategories { (data, response, error) -> Void in
@@ -117,7 +117,7 @@ extension TMECategoryViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kCategoryTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kTMECategoryTableViewCellReuseIdentifier, for: indexPath) as? TMECategoryTableViewCell else {
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }
         cell.nameLabel.text = category?.subcategories[indexPath.row].name

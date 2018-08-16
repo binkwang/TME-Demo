@@ -1,5 +1,5 @@
 //
-//  DataParser.swift
+//  TMEDataParser.swift
 //  TM-Demo
 //
 //  Created by Bink Wang on 8/16/18.
@@ -8,33 +8,18 @@
 
 import Foundation
 
-let dataloadedNotificationKey = "com.binkwang.dataloaded"
-
-//func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-//    URLSession.shared.dataTask(with: url) { data, response, error in
-//        completion(data, response, error)
-//        }.resume()
-//}
-
-
-//enum FacilityType: String {
-//    case Attraction
-//    case Entertainment
-//    case Restaurant
-//}
-
-class DataParser {
+class TMEDataParser {
     
     init() {}
     
-    func parseCategoryResponse(_ data: Data?, _ error: Error?, completion: @escaping (Category?, String?) -> Void) -> Void {
+    func parseCategoryResponse(_ data: Data?, _ error: Error?, completion: @escaping (TMECategory?, String?) -> Void) -> Void {
         
         if let data = data {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                 
                 if let dictionary = dictionary {
-                    let category = Category(with: dictionary)
+                    let category = TMECategory(with: dictionary)
                     completion(category, nil)
                 }
             } catch let error as NSError {
@@ -55,15 +40,15 @@ class DataParser {
         }
     }
     
-    func parseListingSearchResponse(_ data: Data?, _ error: Error?, completion: @escaping ([SingleListing]?, String?) -> Void) -> Void {
+    func parseListingSearchResponse(_ data: Data?, _ error: Error?, completion: @escaping ([TMESingleListing]?, String?) -> Void) -> Void {
         if let data = data {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                 
-                var listings: [SingleListing] = []
+                var listings: [TMESingleListing] = []
                 if let dictionary = dictionary, let list = dictionary["List"] as? [[String:Any]] {
                     list.forEach { (listingDictionary) in
-                        let singleListing = SingleListing.init(with: listingDictionary)
+                        let singleListing = TMESingleListing.init(with: listingDictionary)
                         listings.append(singleListing)
                     }
                     completion(listings, nil)

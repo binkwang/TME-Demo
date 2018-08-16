@@ -13,7 +13,7 @@ internal let kTMEListingTableViewCellNibName = "TMEListingTableViewCell"
 
 class TMEListingTableViewCell: UITableViewCell {
     
-    var singleListing: SingleListing? {
+    var singleListing: TMESingleListing? {
         didSet {
             if let title = singleListing?.title, let id = singleListing?.listingId {
                 titleLabel.text = "title: \(title)"

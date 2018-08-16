@@ -23,6 +23,4 @@ extension String {
         }
         return dictionary as? Dictionary<String, String>
     }
-    
-    
 }

@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  TMECategoryTableViewCell.swift
 //  TM-Demo
 //
 //  Created by Bink Wang on 8/16/18.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-internal let kCategoryTableViewCellReuseIdentifier = "CategoryTableViewCellReuseIdentifier"
-internal let kCategoryTableViewCellNibName = "CategoryTableViewCell"
+internal let kTMECategoryTableViewCellReuseIdentifier = "TMECategoryTableViewCellReuseIdentifier"
+internal let kTMECategoryTableViewCellNibName = "TMECategoryTableViewCell"
 
-class CategoryTableViewCell: UITableViewCell {
+class TMECategoryTableViewCell: UITableViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!

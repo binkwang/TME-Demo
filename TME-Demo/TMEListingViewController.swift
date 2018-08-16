@@ -14,8 +14,8 @@ class TMEListingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let parser = DataParser()
-    var listings: [SingleListing]? {
+    let parser = TMEDataParser()
+    var listings: [TMESingleListing]? {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -26,9 +26,9 @@ class TMEListingViewController: UIViewController {
         }
     }
     
-    var category: Category? {
+    var category: TMECategory? {
         didSet {
-            let requester = DataRequester()
+            let requester = TMEDataRequester()
             requester.fetchListing(category?.id) { (data, response, error) -> Void in
                 self.parser.parseListingSearchResponse(data, error, completion: { (listings, errString) in
                     self.listings = listings
