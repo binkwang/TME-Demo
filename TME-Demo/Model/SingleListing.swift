@@ -9,7 +9,7 @@
 import Foundation
 
 struct SingleListing {
-    var listingId: String? //--- format: 6866235
+    var listingId: Int? //--- format: 6866235
     var title: String?
     var subtitle: String?
     var category: String?
@@ -27,7 +27,7 @@ struct SingleListing {
     init(with dictionary: [String: Any]?) {
         guard let dictionary = dictionary else { return }
         
-        listingId = dictionary["ListingId"] as? String
+        listingId = dictionary["ListingId"] as? Int
         title = dictionary["Title"] as? String
         subtitle = dictionary["Subtitle"] as? String
         category = dictionary["Category"] as? String
@@ -41,6 +41,13 @@ struct SingleListing {
         isNew = dictionary["IsNew"] as? Bool
         
         //--- TODO: parse "date" property
+    }
+    
+    func getImage(url: String?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+        guard let url = url, !(url.isEmpty) else { return }
+        URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { (data, response, error) -> Void in
+            completion(data, response, error)
+            }.resume()
     }
 }
 

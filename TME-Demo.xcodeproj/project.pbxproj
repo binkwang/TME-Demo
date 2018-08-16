@@ -25,6 +25,9 @@
 		23830195212465060075302B /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830193212465060075302B /* DataRequester.swift */; };
 		238301982124651D0075302B /* TMEDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301962124651D0075302B /* TMEDetailViewController.swift */; };
 		238301992124651D0075302B /* TMEListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301972124651D0075302B /* TMEListingViewController.swift */; };
+		238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383019E21250BB10075302B /* TMEListingTableViewCell.swift */; };
+		238301A121250BB10075302B /* TMEListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2383019F21250BB10075302B /* TMEListingTableViewCell.xib */; };
+		238301A321251B0F0075302B /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238301A221251B0E0075302B /* default.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		23830193212465060075302B /* DataRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
 		238301962124651D0075302B /* TMEDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDetailViewController.swift; sourceTree = "<group>"; };
 		238301972124651D0075302B /* TMEListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEListingViewController.swift; sourceTree = "<group>"; };
+		2383019E21250BB10075302B /* TMEListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEListingTableViewCell.swift; sourceTree = "<group>"; };
+		2383019F21250BB10075302B /* TMEListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TMEListingTableViewCell.xib; sourceTree = "<group>"; };
+		238301A221251B0E0075302B /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				238301802124647C0075302B /* arrow.png */,
+				238301A221251B0E0075302B /* default.jpg */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -167,6 +174,8 @@
 			children = (
 				23830184212464990075302B /* CategoryTableViewCell.swift */,
 				23830183212464990075302B /* CategoryTableViewCell.xib */,
+				2383019E21250BB10075302B /* TMEListingTableViewCell.swift */,
+				2383019F21250BB10075302B /* TMEListingTableViewCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -192,8 +201,8 @@
 		23830191212464FD0075302B /* RemoteService */ = {
 			isa = PBXGroup;
 			children = (
-				23830192212465060075302B /* DataParser.swift */,
 				23830193212465060075302B /* DataRequester.swift */,
+				23830192212465060075302B /* DataParser.swift */,
 			);
 			path = RemoteService;
 			sourceTree = "<group>";
@@ -304,7 +313,9 @@
 			files = (
 				2383017E212463FB0075302B /* Main.storyboard in Resources */,
 				23830185212464990075302B /* CategoryTableViewCell.xib in Resources */,
+				238301A321251B0F0075302B /* default.jpg in Resources */,
 				2383015A2124638F0075302B /* LaunchScreen.storyboard in Resources */,
+				238301A121250BB10075302B /* TMEListingTableViewCell.xib in Resources */,
 				238301572124638F0075302B /* Assets.xcassets in Resources */,
 				238301812124647C0075302B /* arrow.png in Resources */,
 			);
@@ -334,6 +345,7 @@
 				23830190212464E90075302B /* UIViewController+TME.swift in Sources */,
 				238301522124638E0075302B /* TMECategoryViewController.swift in Sources */,
 				238301992124651D0075302B /* TMEListingViewController.swift in Sources */,
+				238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */,
 				23830194212465060075302B /* DataParser.swift in Sources */,
 				2383018B212464B10075302B /* Category.swift in Sources */,
 				238301502124638E0075302B /* AppDelegate.swift in Sources */,

@@ -13,7 +13,6 @@ internal let kTMEListingViewControllerIdentifier = "TMEListingViewController"
 class TMEListingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private let kRootRableViewCellReuseIdentifier = "RootRableViewCellReuseIdentifier"
     
     let parser = DataParser()
     var listings: [SingleListing]? {
@@ -56,9 +55,8 @@ class TMEListingViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = UIColor.gray
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        let nib = UINib.init(nibName: "CategoryTableViewCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: kCategoryTableViewCellReuseIdentifier)
-
+        let nib = UINib.init(nibName: kTMEListingTableViewCellNibName, bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: kTMEListingTableViewCellReuseIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,7 +104,7 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 60
     }
     
     //--- UITableViewDataSource
@@ -125,11 +123,12 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kCategoryTableViewCellReuseIdentifier, for: indexPath) as? CategoryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kTMEListingTableViewCellReuseIdentifier, for: indexPath) as? TMEListingTableViewCell else {
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }
-        cell.nameLabel.text = listings![indexPath.row].title
-        
+        if let listings = listings {
+            cell.singleListing = listings[indexPath.row]
+        }
         return cell
     }
 }

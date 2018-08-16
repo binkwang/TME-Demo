@@ -12,17 +12,11 @@ internal let kTMECategoryViewControllerIdentifier = "TMECategoryViewController"
 
 class TMECategoryViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    
-    private let kRootRableViewCellReuseIdentifier = "RootRableViewCellReuseIdentifier"
     
     //--- TODO: make singleton
     let requester = DataRequester()
     let parser = DataParser()
-    
     
     var isRootCategoryView: Bool = true
     private var category: Category? {
@@ -43,7 +37,7 @@ class TMECategoryViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorColor = UIColor.gray
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        let nib = UINib.init(nibName: "CategoryTableViewCell", bundle: nil)
+        let nib = UINib.init(nibName: kCategoryTableViewCellNibName, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: kCategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
@@ -66,8 +60,6 @@ class TMECategoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         //--- Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
 //--- MARK: UITableViewDataSource & UITableViewDelegate

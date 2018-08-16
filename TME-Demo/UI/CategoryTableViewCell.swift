@@ -9,10 +9,9 @@
 import UIKit
 
 internal let kCategoryTableViewCellReuseIdentifier = "CategoryTableViewCellReuseIdentifier"
+internal let kCategoryTableViewCellNibName = "CategoryTableViewCell"
 
 class CategoryTableViewCell: UITableViewCell {
-    
-    let nibName = "CategoryTableViewCell"
     
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
