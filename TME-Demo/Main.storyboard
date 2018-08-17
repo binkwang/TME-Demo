@@ -50,9 +50,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-qK-UHi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-qK-UHi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="an2-vH-3fs" id="HXd-Lz-4hC"/>
@@ -61,6 +60,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yqr-qK-UHi" firstAttribute="bottom" secondItem="oZg-SS-mzN" secondAttribute="bottom" id="DhC-Z6-90e"/>
+                            <constraint firstItem="yqr-qK-UHi" firstAttribute="top" secondItem="lGl-nC-mG3" secondAttribute="top" id="Inn-rU-0g8"/>
+                            <constraint firstItem="yqr-qK-UHi" firstAttribute="trailing" secondItem="oZg-SS-mzN" secondAttribute="trailing" id="Yl4-jE-zRx"/>
+                            <constraint firstItem="yqr-qK-UHi" firstAttribute="leading" secondItem="oZg-SS-mzN" secondAttribute="leading" id="vej-7z-IMZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oZg-SS-mzN"/>
                     </view>
                     <connections>

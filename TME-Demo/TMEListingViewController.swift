@@ -27,17 +27,13 @@ class TMEListingViewController: UIViewController {
     
     var category: TMECategory? {
         didSet {
-            TMEDataRequester.shared.fetchListing(category?.id) { (data, error) -> Void in
-                TMEDataParser.shared.parseListingSearchResponse(data, error, completion: { (listings, errString) in
+            TMEDataCenter.shared.fetchListing(category?.id) { (listings, errString) in
+                if let errString = errString {
+                    self.showAlert("ERROR", "\(errString)")
+                }
+                else if let listings = listings {
                     self.listings = listings
-                    if let listings = self.listings {
-                        print("listings.count: \(listings.count)")
-                    }
-                    else if let errString = errString {
-                        print("errString: \(errString)")
-                        self.showAlert("ERROR", "\(errString)")
-                    }
-                })
+                }
             }
         }
     }

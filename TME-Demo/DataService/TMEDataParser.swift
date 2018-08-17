@@ -8,14 +8,17 @@
 
 import Foundation
 
+typealias CategoryParsingCompletionHandler = (TMECategory?, String?) -> Void
+typealias ListingParsingCompletionHandler = ([TMESingleListing]?, String?) -> Void
+typealias ListingDetailParsingCompletionHandler = (TMESingleListingDetail?, String?) -> Void
+
 class TMEDataParser {
     
     static let shared = TMEDataParser()
     
     private init() {}
     
-    func parseCategoryResponse(_ data: Data?, _ error: Error?, completion: @escaping (TMECategory?, String?) -> Void) -> Void {
-        
+    func parseCategoryResponse(_ data: Data?, _ error: Error?, completion: @escaping CategoryParsingCompletionHandler) {
         if let data = data {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
@@ -24,25 +27,21 @@ class TMEDataParser {
                     let category = TMECategory(with: dictionary)
                     completion(category, nil)
                 }
+                else {
+                    completion(nil, "Data parsing error")
+                }
             } catch let error as NSError {
                 print(error)
-                
-                //--- TODO: parse Error to String
-                
-                completion(nil, nil)
-                
+                completion(nil, "Data parsing error")
             }
         }
         else if let error = error {
             print(error)
-            
-            //--- TODO: parse Error to String
-            
-            completion(nil, nil)
+            completion(nil, "Response data error")
         }
     }
     
-    func parseListingSearchResponse(_ data: Data?, _ error: Error?, completion: @escaping ([TMESingleListing]?, String?) -> Void) -> Void {
+    func parseListingSearchResponse(_ data: Data?, _ error: Error?, completion: @escaping ListingParsingCompletionHandler) {
         if let data = data {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
@@ -56,20 +55,20 @@ class TMEDataParser {
                     completion(listings, nil)
                 }
                 else {
-                    completion(nil, "Data Error")
+                    completion(nil, "Data parsing error")
                 }
             } catch let error as NSError {
                 print(error)
-                completion(nil, "Data Error")
+                completion(nil, "Data parsing error")
             }
         }
         else if let error = error {
             print(error)
-            completion(nil, "Data Error")
+            completion(nil, "Response data error")
         }
     }
     
-    func parseListingDetailResponse(_ data: Data?, _ error: Error?, completion: @escaping (TMESingleListingDetail?, String?) -> Void) -> Void {
+    func parseListingDetailResponse(_ data: Data?, _ error: Error?, completion: @escaping ListingDetailParsingCompletionHandler) {
         if let data = data {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
@@ -79,16 +78,16 @@ class TMEDataParser {
                     completion(singleListingDetail, nil)
                 }
                 else {
-                    completion(nil, "Data Error")
+                    completion(nil, "Data parsing error")
                 }
             } catch let error as NSError {
                 print(error)
-                completion(nil, "Data Error")
+                completion(nil, "Data parsing error")
             }
         }
         else if let error = error {
             print(error)
-            completion(nil, "Data Error")
+            completion(nil, "Response data error")
         }
     }
 }

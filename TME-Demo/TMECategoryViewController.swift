@@ -14,7 +14,8 @@ class TMECategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var isRootCategoryView: Bool = true
+    private var isRootCategoryView: Bool = true
+    
     private var category: TMECategory? {
         didSet {
             DispatchQueue.main.async {
@@ -37,17 +38,13 @@ class TMECategoryViewController: UIViewController {
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
-            TMEDataRequester.shared.fetchCategories { (data, error) -> Void in
-                TMEDataParser.shared.parseCategoryResponse(data, error, completion: { (category, errString) in
-                    self.category = category
-                    if let category = self.category {
-                        print("subcategories.count: \(category.subcategories[0].subcategories.count)")
-                    }
-                    else if let errString = errString {
-                        print("errString: \(errString)")
-                        self.showAlert("ERROR", "errString")
-                    }
-                })
+            TMEDataCenter.shared.fetchRootCategory { (rootCategory, errString) in
+                if let errString = errString {
+                    self.showAlert("ERROR", "\(errString)")
+                }
+                else if let rootCategory = rootCategory {
+                    self.category = rootCategory
+                }
             }
         }
     }
@@ -70,7 +67,6 @@ extension TMECategoryViewController: UITableViewDataSource, UITableViewDelegate
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-            //--- TODO: show listing
             if let listingViewController = storyboard.instantiateViewController(withIdentifier: kTMEListingViewControllerIdentifier) as? TMEListingViewController {
                 listingViewController.category = category?.subcategories[indexPath.row]
                 self.navigationController?.pushViewController(listingViewController, animated: true)
