@@ -10,7 +10,9 @@ import Foundation
 
 class TMEDataParser {
     
-    init() {}
+    static let shared = TMEDataParser()
+    
+    private init() {}
     
     func parseCategoryResponse(_ data: Data?, _ error: Error?, completion: @escaping (TMECategory?, String?) -> Void) -> Void {
         

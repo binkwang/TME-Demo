@@ -14,10 +14,6 @@ class TMECategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //--- TODO: make singleton
-    let requester = TMEDataRequester()
-    let parser = TMEDataParser()
-    
     var isRootCategoryView: Bool = true
     private var category: TMECategory? {
         didSet {
@@ -41,8 +37,8 @@ class TMECategoryViewController: UIViewController {
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
-            requester.fetchCategories { (data, response, error) -> Void in
-                self.parser.parseCategoryResponse(data, error, completion: { (category, errString) in
+            TMEDataRequester.shared.fetchCategories { (data, response, error) -> Void in
+                TMEDataParser.shared.parseCategoryResponse(data, error, completion: { (category, errString) in
                     self.category = category
                     if let category = self.category {
                         print("subcategories.count: \(category.subcategories[0].subcategories.count)")

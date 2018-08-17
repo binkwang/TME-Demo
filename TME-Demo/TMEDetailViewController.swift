@@ -18,10 +18,8 @@ class TMEDetailViewController: UIViewController {
     
     var listingId: Int? {
         didSet {
-            let parser = TMEDataParser()
-            let requester = TMEDataRequester()
-            requester.fetchListingDetail(listingId) { (data, response, error) in
-                parser.parseListingDetailResponse(data, error, completion: { (listingDetail, errString) in
+            TMEDataRequester.shared.fetchListingDetail(listingId) { (data, response, error) in
+                TMEDataParser.shared.parseListingDetailResponse(data, error, completion: { (listingDetail, errString) in
                     if let listingDetail = listingDetail {
                         self.listingDetail = listingDetail
                     }

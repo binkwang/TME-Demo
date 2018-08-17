@@ -20,17 +20,17 @@ internal let TMERequestTimeoutInterval = 10.0
 
 class TMEDataRequester {
     
-    var authorization: String {
-        return String(describing: "OAuth oauth_consumer_key=\(TMEConsumerKey), oauth_signature_method=PLAINTEXT, oauth_signature=\(TMEConsumerSecret)")
-    }
+    static let shared = TMEDataRequester()
     
-    init() {
+    private init() {
         guard !(TMEConsumerKey.isEmpty) && !(TMEConsumerSecret.isEmpty) else {
-            let msg = "Configure ConsumerKey and ConsumerSecret inside DataRequester.swift"
+            let msg = "Configure ConsumerKey and ConsumerSecret inside TMEDataRequester.swift"
             fatalError(msg)
         }
-        print("TMEConsumerKey: \(TMEConsumerKey)")
-        print("TMEConsumerSecret: \(TMEConsumerSecret)")
+    }
+    
+    var authorization: String {
+        return String(describing: "OAuth oauth_consumer_key=\(TMEConsumerKey), oauth_signature_method=PLAINTEXT, oauth_signature=\(TMEConsumerSecret)")
     }
     
     func fetchCategories(completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
@@ -91,6 +91,4 @@ class TMEDataRequester {
         })
         dataTask.resume()
     }
-    
-    
 }

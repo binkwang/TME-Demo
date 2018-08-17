@@ -27,10 +27,8 @@ class TMEListingViewController: UIViewController {
     
     var category: TMECategory? {
         didSet {
-            let parser = TMEDataParser()
-            let requester = TMEDataRequester()
-            requester.fetchListing(category?.id) { (data, response, error) -> Void in
-                parser.parseListingSearchResponse(data, error, completion: { (listings, errString) in
+            TMEDataRequester.shared.fetchListing(category?.id) { (data, response, error) -> Void in
+                TMEDataParser.shared.parseListingSearchResponse(data, error, completion: { (listings, errString) in
                     self.listings = listings
                     if let listings = self.listings {
                         print("listings.count: \(listings.count)")
