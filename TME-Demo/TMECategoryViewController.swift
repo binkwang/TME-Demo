@@ -37,7 +37,7 @@ class TMECategoryViewController: UIViewController {
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
-            TMEDataRequester.shared.fetchCategories { (data, response, error) -> Void in
+            TMEDataRequester.shared.fetchCategories { (data, error) -> Void in
                 TMEDataParser.shared.parseCategoryResponse(data, error, completion: { (category, errString) in
                     self.category = category
                     if let category = self.category {

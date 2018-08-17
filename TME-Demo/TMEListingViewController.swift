@@ -27,7 +27,7 @@ class TMEListingViewController: UIViewController {
     
     var category: TMECategory? {
         didSet {
-            TMEDataRequester.shared.fetchListing(category?.id) { (data, response, error) -> Void in
+            TMEDataRequester.shared.fetchListing(category?.id) { (data, error) -> Void in
                 TMEDataParser.shared.parseListingSearchResponse(data, error, completion: { (listings, errString) in
                     self.listings = listings
                     if let listings = self.listings {

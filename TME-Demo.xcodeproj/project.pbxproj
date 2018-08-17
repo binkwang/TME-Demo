@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		237215582125426300A1669D /* UIImageView+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215572125426300A1669D /* UIImageView+TME.swift */; };
+		2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215592126BF7100A1669D /* TMEServiceConfig.swift */; };
 		238301502124638E0075302B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383014F2124638E0075302B /* AppDelegate.swift */; };
 		238301522124638E0075302B /* TMECategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301512124638E0075302B /* TMECategoryViewController.swift */; };
 		238301572124638F0075302B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238301562124638F0075302B /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		237215572125426300A1669D /* UIImageView+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+TME.swift"; sourceTree = "<group>"; };
+		237215592126BF7100A1669D /* TMEServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEServiceConfig.swift; sourceTree = "<group>"; };
 		2383014C2124638E0075302B /* TME-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TME-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2383014F2124638E0075302B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238301512124638E0075302B /* TMECategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMECategoryViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		23830191212464FD0075302B /* RemoteService */ = {
 			isa = PBXGroup;
 			children = (
+				237215592126BF7100A1669D /* TMEServiceConfig.swift */,
 				23830193212465060075302B /* TMEDataRequester.swift */,
 				23830192212465060075302B /* TMEDataParser.swift */,
 			);
@@ -353,6 +356,7 @@
 			files = (
 				238301A5212529020075302B /* TMESingleListingDetail.swift in Sources */,
 				23830190212464E90075302B /* UIViewController+TME.swift in Sources */,
+				2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */,
 				238301522124638E0075302B /* TMECategoryViewController.swift in Sources */,
 				238301992124651D0075302B /* TMEListingViewController.swift in Sources */,
 				238301A721252FC20075302B /* TMEListingPhoto.swift in Sources */,

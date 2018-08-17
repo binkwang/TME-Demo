@@ -42,13 +42,6 @@ struct TMESingleListing {
         
         //--- TODO: parse "date" property
     }
-    
-    func getImage(url: String?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
-        guard let url = url, !(url.isEmpty) else { return }
-        URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { (data, response, error) -> Void in
-            completion(data, response, error)
-            }.resume()
-    }
 }
 
 /** Json Example

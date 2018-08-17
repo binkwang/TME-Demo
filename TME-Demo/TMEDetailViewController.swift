@@ -18,7 +18,7 @@ class TMEDetailViewController: UIViewController {
     
     var listingId: Int? {
         didSet {
-            TMEDataRequester.shared.fetchListingDetail(listingId) { (data, response, error) in
+            TMEDataRequester.shared.fetchListingDetail(listingId) { (data, error) in
                 TMEDataParser.shared.parseListingDetailResponse(data, error, completion: { (listingDetail, errString) in
                     if let listingDetail = listingDetail {
                         self.listingDetail = listingDetail
