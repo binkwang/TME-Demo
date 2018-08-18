@@ -13,7 +13,7 @@ class TMEDataCenter {
     
     private init() {}
     
-    func fetchRootCategory(completion: @escaping (TMECategory?, String?) -> Void) {
+    func fetchRootCategory(completion: @escaping CategoryParsingCompletionHandler) {
         TMEDataRequester.shared.fetchCategories { (data, error) -> Void in
             TMEDataParser.shared.parseCategoryResponse(data, error, completion: { (category, errString) in
                 completion(category, errString)
@@ -21,7 +21,7 @@ class TMEDataCenter {
         }
     }
     
-    func fetchListing(_ catetoryId: String?, completion: @escaping ([TMESingleListing]?, String?) -> Void) {
+    func fetchListing(_ catetoryId: String?, completion: @escaping ListingParsingCompletionHandler) {
         TMEDataRequester.shared.fetchListing(catetoryId) { (data, error) -> Void in
             TMEDataParser.shared.parseListingSearchResponse(data, error, completion: { (listings, errString) in
                 completion(listings, errString)
@@ -29,7 +29,7 @@ class TMEDataCenter {
         }
     }
     
-    func fetchListingDetail(_ listingId: Int?, completion: @escaping (TMESingleListingDetail?, String?) -> Void) {
+    func fetchListingDetail(_ listingId: Int?, completion: @escaping ListingDetailParsingCompletionHandler) {
         TMEDataRequester.shared.fetchListingDetail(listingId) { (data, error) in
             TMEDataParser.shared.parseListingDetailResponse(data, error, completion: { (listingDetail, errString) in
                 completion(listingDetail, errString)
