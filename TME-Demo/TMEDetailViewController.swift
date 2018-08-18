@@ -34,11 +34,11 @@ class TMEDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 print("listingDetail.\(String(describing: self.listingDetail?.title))")
                 if let title = self.listingDetail?.title, let id = self.listingDetail?.listingId, let photos = self.listingDetail?.photos {
-                    self.titleLabel.text = title
-                    self.idLabel.text = "\(id)"
+                    self.titleLabel?.text = title
+                    self.idLabel?.text = "\(id)"
                     
                     if photos.count > 0 {
-                        self.imageView.renderImage(imageUrl: photos[0].fullSize)
+                        self.imageView?.renderImage(imageUrl: photos[0].fullSize)
                     }
                 }
             }
@@ -47,7 +47,6 @@ class TMEDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.title = "Detail"
     }
 

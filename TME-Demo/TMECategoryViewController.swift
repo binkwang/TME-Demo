@@ -8,11 +8,13 @@
 
 import UIKit
 
+protocol LeafCategorySelectionDelegate: class {
+    func leafCategorySelected(_ category: TMECategory?)
+}
+
 internal let kTMECategoryViewControllerIdentifier = "TMECategoryViewController"
 
-class TMECategoryViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
+class TMECategoryViewController: UITableViewController {
     
     private var isRootCategoryView: Bool = true
     
@@ -24,16 +26,13 @@ class TMECategoryViewController: UIViewController {
         }
     }
     
+    weak var delegate: LeafCategorySelectionDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.title = "Category"
         
         // Init TableView
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorColor = UIColor.gray
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         let nib = UINib.init(nibName: kTMECategoryTableViewCellNibName, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
@@ -57,45 +56,51 @@ class TMECategoryViewController: UIViewController {
 
 //--- MARK: UITableViewDataSource & UITableViewDelegate
 
-extension TMECategoryViewController: UITableViewDataSource, UITableViewDelegate
+extension TMECategoryViewController
 {
     //--- UITableViewDelegate
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.section as Any, indexPath.row as Any)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-            if let listingViewController = storyboard.instantiateViewController(withIdentifier: kTMEListingViewControllerIdentifier) as? TMEListingViewController {
-                listingViewController.category = category?.subcategories[indexPath.row]
-                self.navigationController?.pushViewController(listingViewController, animated: true)
+            delegate?.leafCategorySelected(category?.subcategories[indexPath.row])
+            
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                if let listingViewController = delegate as? TMEListingViewController {
+                    splitViewController?.showDetailViewController(listingViewController, sender: nil)
+                }
             }
         }
         else {
             if let categoryViewController = storyboard.instantiateViewController(withIdentifier: kTMECategoryViewControllerIdentifier) as? TMECategoryViewController {
                 categoryViewController.category = category?.subcategories[indexPath.row]
                 categoryViewController.isRootCategoryView = false
+                
+                if let listingViewController = delegate as? TMEListingViewController {
+                    categoryViewController.delegate = listingViewController
+                }
                 self.navigationController?.pushViewController(categoryViewController, animated: true)
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
     
     //--- UITableViewDataSource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = category?.subcategories.count {
             return count
         }
@@ -104,11 +109,11 @@ extension TMECategoryViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return category?.path
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kTMECategoryTableViewCellReuseIdentifier, for: indexPath) as? TMECategoryTableViewCell else {
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }

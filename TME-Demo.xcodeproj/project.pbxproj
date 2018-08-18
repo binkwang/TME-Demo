@@ -10,13 +10,13 @@
 		237215582125426300A1669D /* UIImageView+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215572125426300A1669D /* UIImageView+TME.swift */; };
 		2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215592126BF7100A1669D /* TMEServiceConfig.swift */; };
 		2372155C2126FF6500A1669D /* TMEDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372155B2126FF6500A1669D /* TMEDataCenter.swift */; };
+		237215602127CDB600A1669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2372155F2127CDB600A1669D /* Main.storyboard */; };
 		238301502124638E0075302B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383014F2124638E0075302B /* AppDelegate.swift */; };
 		238301522124638E0075302B /* TMECategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301512124638E0075302B /* TMECategoryViewController.swift */; };
 		238301572124638F0075302B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238301562124638F0075302B /* Assets.xcassets */; };
 		2383015A2124638F0075302B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238301582124638F0075302B /* LaunchScreen.storyboard */; };
 		238301652124638F0075302B /* TME_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301642124638F0075302B /* TME_DemoTests.swift */; };
 		238301702124638F0075302B /* TME_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383016F2124638F0075302B /* TME_DemoUITests.swift */; };
-		2383017E212463FB0075302B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2383017D212463FB0075302B /* Main.storyboard */; };
 		238301812124647C0075302B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 238301802124647C0075302B /* arrow.png */; };
 		23830185212464990075302B /* TMECategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23830183212464990075302B /* TMECategoryTableViewCell.xib */; };
 		23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830184212464990075302B /* TMECategoryTableViewCell.swift */; };
@@ -56,6 +56,7 @@
 		237215572125426300A1669D /* UIImageView+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+TME.swift"; sourceTree = "<group>"; };
 		237215592126BF7100A1669D /* TMEServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEServiceConfig.swift; sourceTree = "<group>"; };
 		2372155B2126FF6500A1669D /* TMEDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEDataCenter.swift; sourceTree = "<group>"; };
+		2372155F2127CDB600A1669D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2383014C2124638E0075302B /* TME-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TME-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2383014F2124638E0075302B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		238301512124638E0075302B /* TMECategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMECategoryViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		2383016B2124638F0075302B /* TME-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TME-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2383016F2124638F0075302B /* TME_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TME_DemoUITests.swift; sourceTree = "<group>"; };
 		238301712124638F0075302B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2383017D212463FB0075302B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		238301802124647C0075302B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		23830183212464990075302B /* TMECategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMECategoryTableViewCell.xib; sourceTree = "<group>"; };
 		23830184212464990075302B /* TMECategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				238301512124638E0075302B /* TMECategoryViewController.swift */,
 				238301972124651D0075302B /* TMEListingViewController.swift */,
 				238301962124651D0075302B /* TMEDetailViewController.swift */,
-				2383017D212463FB0075302B /* Main.storyboard */,
+				2372155F2127CDB600A1669D /* Main.storyboard */,
 				238301562124638F0075302B /* Assets.xcassets */,
 				238301582124638F0075302B /* LaunchScreen.storyboard */,
 				2383015B2124638F0075302B /* Info.plist */,
@@ -326,11 +326,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2383017E212463FB0075302B /* Main.storyboard in Resources */,
 				23830185212464990075302B /* TMECategoryTableViewCell.xib in Resources */,
 				238301A321251B0F0075302B /* default.jpg in Resources */,
 				2383015A2124638F0075302B /* LaunchScreen.storyboard in Resources */,
 				238301A121250BB10075302B /* TMEListingTableViewCell.xib in Resources */,
+				237215602127CDB600A1669D /* Main.storyboard in Resources */,
 				238301572124638F0075302B /* Assets.xcassets in Resources */,
 				238301812124647C0075302B /* arrow.png in Resources */,
 			);

@@ -10,9 +10,7 @@ import UIKit
 
 internal let kTMEListingViewControllerIdentifier = "TMEListingViewController"
 
-class TMEListingViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
+class TMEListingViewController: UITableViewController {
     
     var listings: [TMESingleListing]? {
         didSet {
@@ -40,15 +38,9 @@ class TMEListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         self.title = "Listing"
         
-        // Init TableView
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorColor = UIColor.gray
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        //--- Init TableView
         let nib = UINib.init(nibName: kTMEListingTableViewCellNibName, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: kTMEListingTableViewCellReuseIdentifier)
     }
@@ -57,25 +49,15 @@ class TMEListingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 //--- MARK: UITableViewDataSource & UITableViewDelegate
 
-extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
+extension TMEListingViewController
 {
     //--- UITableViewDelegate
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.section as Any, indexPath.row as Any)
         
@@ -89,17 +71,17 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
     //--- UITableViewDataSource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = listings?.count {
             return count
         }
@@ -108,7 +90,7 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kTMEListingTableViewCellReuseIdentifier, for: indexPath) as? TMEListingTableViewCell else {
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }
@@ -116,5 +98,13 @@ extension TMEListingViewController: UITableViewDataSource, UITableViewDelegate
             cell.singleListing = listings[indexPath.row]
         }
         return cell
+    }
+}
+
+//--- MARK: LeafCategorySelectionDelegate
+
+extension TMEListingViewController: LeafCategorySelectionDelegate {
+    func leafCategorySelected(_ category: TMECategory?) {
+        self.category = category
     }
 }
