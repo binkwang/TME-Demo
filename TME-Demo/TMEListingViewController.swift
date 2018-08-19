@@ -14,12 +14,7 @@ class TMEListingViewController: UITableViewController {
     
     var listings: [TMESingleListing]? {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                if self.listings?.count == 0 {
-                    self.showAlert("Info", "Nothing found under this category.")
-                }
-            }
+            self.refreshUI()
         }
     }
     
@@ -48,6 +43,15 @@ class TMEListingViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func refreshUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            if self.listings?.count == 0 {
+                self.showAlert("Info", "Nothing found under this category.")
+            }
+        }
     }
 }
 

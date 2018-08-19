@@ -13,6 +13,11 @@ class TMEDataCenter {
     
     private init() {}
     
+    /**
+     Fetch & parse root category.
+     
+     Return an instance of TMECategory or an error message to client.
+     */
     func fetchRootCategory(completion: @escaping CategoryParsingCompletionHandler) {
         TMEDataRequester.shared.fetchCategories { (data, error) -> Void in
             TMEDataParser.shared.parseCategoryResponse(data, error, completion: { (category, errString) in
@@ -21,6 +26,11 @@ class TMEDataCenter {
         }
     }
     
+    /**
+     Fetch & parse the listings of a specific leaf category.
+     
+     Return a listing array or an error message to client.
+     */
     func fetchListing(_ catetoryId: String?, completion: @escaping ListingParsingCompletionHandler) {
         TMEDataRequester.shared.fetchListing(catetoryId) { (data, error) -> Void in
             TMEDataParser.shared.parseListingSearchResponse(data, error, completion: { (listings, errString) in
@@ -29,6 +39,11 @@ class TMEDataCenter {
         }
     }
     
+    /**
+     Fetch & parse the detail of a specific listing.
+     
+     Return an instance of TMESingleListingDetail or an error message to client.
+     */
     func fetchListingDetail(_ listingId: Int?, completion: @escaping ListingDetailParsingCompletionHandler) {
         TMEDataRequester.shared.fetchListingDetail(listingId) { (data, error) in
             TMEDataParser.shared.parseListingDetailResponse(data, error, completion: { (listingDetail, errString) in

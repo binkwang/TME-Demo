@@ -8,8 +8,8 @@
 
 import UIKit
 
-internal let kTMECategoryTableViewCellReuseIdentifier = "TMECategoryTableViewCellReuseIdentifier"
 internal let kTMECategoryTableViewCellNibName = "TMECategoryTableViewCell"
+internal let kTMECategoryTableViewCellReuseIdentifier = "TMECategoryTableViewCellReuseIdentifier"
 
 class TMECategoryTableViewCell: UITableViewCell {
     
@@ -35,7 +35,7 @@ class TMECategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func viewAutoLayout() {
+    private func viewAutoLayout() {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         infoLabel.translatesAutoresizingMaskIntoConstraints = false

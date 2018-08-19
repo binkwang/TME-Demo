@@ -18,6 +18,8 @@ class TMECategoryViewController: UITableViewController {
     
     private var isRootCategoryView: Bool = true
     
+    weak var leafCategorySelectionDelegate: LeafCategorySelectionDelegate?
+    
     private var category: TMECategory? {
         didSet {
             DispatchQueue.main.async {
@@ -25,8 +27,6 @@ class TMECategoryViewController: UITableViewController {
             }
         }
     }
-    
-    weak var delegate: LeafCategorySelectionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +65,10 @@ extension TMECategoryViewController
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-            delegate?.leafCategorySelected(category?.subcategories[indexPath.row])
+            leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
             
             if UIDevice.current.userInterfaceIdiom == .phone {
-                if let listingViewController = delegate as? TMEListingViewController {
+                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
                     splitViewController?.showDetailViewController(listingViewController, sender: nil)
                 }
             }
@@ -78,8 +78,8 @@ extension TMECategoryViewController
                 categoryViewController.category = category?.subcategories[indexPath.row]
                 categoryViewController.isRootCategoryView = false
                 
-                if let listingViewController = delegate as? TMEListingViewController {
-                    categoryViewController.delegate = listingViewController
+                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
+                    categoryViewController.leafCategorySelectionDelegate = listingViewController
                 }
                 self.navigationController?.pushViewController(categoryViewController, animated: true)
             }

@@ -8,8 +8,9 @@
 
 import UIKit
 
-internal let kTMEListingTableViewCellReuseIdentifier = "TMEListingTableViewCellReuseIdentifier"
 internal let kTMEListingTableViewCellNibName = "TMEListingTableViewCell"
+internal let kTMEListingTableViewCellReuseIdentifier = "TMEListingTableViewCellReuseIdentifier"
+
 
 class TMEListingTableViewCell: UITableViewCell {
     
@@ -51,7 +52,7 @@ class TMEListingTableViewCell: UITableViewCell {
         //--- Configure the view for the selected state
     }
     
-    func viewAutoLayout() {
+    private func viewAutoLayout() {
         
         pictureImageView.translatesAutoresizingMaskIntoConstraints = false
         accessoryImageView.translatesAutoresizingMaskIntoConstraints = false

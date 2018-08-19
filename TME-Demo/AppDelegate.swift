@@ -12,10 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         guard let splitViewController = window?.rootViewController as? UISplitViewController,
             let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
             let categoryViewController = leftNavController.topViewController as? TMECategoryViewController,
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let listingViewController = rightNavController.topViewController as? TMEListingViewController
             else { fatalError() }
         
-        categoryViewController.delegate = listingViewController
+        categoryViewController.leafCategorySelectionDelegate = listingViewController
         listingViewController.navigationItem.leftItemsSupplementBackButton = true
         listingViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         
