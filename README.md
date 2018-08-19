@@ -11,15 +11,13 @@
 > Apple iOS version  11.4
 
 ## Architecture
-![](README-Sources/Architecture.png)
+![](README-Media/Architecture.png)
 
 ## Demo Videos 
->  1. iPhone
->  <video src="README-Sources/TME-Demo-iPhone.mov" width="375" height="667" controls="controls"></video>
+### 1. iPhone
 >  
-> 
->  2. iPad
->  <video src="README-Sources/TME-Demo-iPad.mov" width="640" height="480" controls="controls"></video> 
+>  ![](README-Media/TME-Demo-iPhone.gif)
 
-
-
+### 2. iPad
+>  
+>  ![](README-Media/TME-Demo-iPad.gif)
