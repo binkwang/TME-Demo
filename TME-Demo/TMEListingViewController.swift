@@ -20,12 +20,13 @@ class TMEListingViewController: UITableViewController {
     
     var category: TMECategory? {
         didSet {
-            TMEDataCenter.shared.fetchListing(category?.id) { (listings, errString) in
+            TMEDataCenter.shared.fetchListing(category?.id) { [weak self] (listings, errString) in
+                guard let strongSelf = self else { return }
                 if let errString = errString {
-                    self.showAlert("ERROR", "\(errString)")
+                    strongSelf.showAlert("ERROR", "\(errString)")
                 }
                 else if let listings = listings {
-                    self.listings = listings
+                    strongSelf.listings = listings
                 }
             }
         }

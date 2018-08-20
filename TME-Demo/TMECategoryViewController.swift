@@ -37,12 +37,13 @@ class TMECategoryViewController: UITableViewController {
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
-            TMEDataCenter.shared.fetchRootCategory { (rootCategory, errString) in
+            TMEDataCenter.shared.fetchRootCategory { [weak self] (rootCategory, errString) in
+                guard let strongSelf = self else { return }
                 if let errString = errString {
-                    self.showAlert("ERROR", "\(errString)")
+                    strongSelf.showAlert("ERROR", "\(errString)")
                 }
                 else if let rootCategory = rootCategory {
-                    self.category = rootCategory
+                    strongSelf.category = rootCategory
                 }
             }
         }
