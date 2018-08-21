@@ -65,20 +65,28 @@ extension TMECategoryViewController
         print(indexPath.section as Any, indexPath.row as Any)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-            leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
-            
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
-                    splitViewController?.showDetailViewController(listingViewController, sender: nil)
-                }
+        
+        //-- show listings under selected category
+        leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
+                splitViewController?.showDetailViewController(listingViewController, sender: nil)
             }
+        }
+        
+        if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
+//            leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
+//            if UIDevice.current.userInterfaceIdiom == .phone {
+//                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
+//                    splitViewController?.showDetailViewController(listingViewController, sender: nil)
+//                }
+//            }
         }
         else {
             if let categoryViewController = storyboard.instantiateViewController(withIdentifier: kTMECategoryViewControllerIdentifier) as? TMECategoryViewController {
                 categoryViewController.category = category?.subcategories[indexPath.row]
                 categoryViewController.isRootCategoryView = false
-                
+
                 if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
                     categoryViewController.leafCategorySelectionDelegate = listingViewController
                 }
