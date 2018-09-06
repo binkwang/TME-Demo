@@ -8,8 +8,28 @@
 
 import Foundation
 
-struct TMEListingPhoto {
+struct TMEListingPhoto: Decodable {
     var key: Int? //--- format: 3633090
+    var value: Value?
+    
+    init() {}
+    
+    init(with dictionary: [String: Any]?) {
+        guard let dictionary = dictionary else { return }
+        key = dictionary["Key"] as? Int
+
+        if let valueDictionary = dictionary["Value"] as? [String:Any] {
+            value = Value.init(with: valueDictionary)
+        }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case key = "Key"
+        case value = "Value"
+    }
+}
+
+struct Value: Decodable {
     var photoId: Int?
     var thumbnail: String?
     var list: String?
@@ -22,17 +42,24 @@ struct TMEListingPhoto {
     
     init(with dictionary: [String: Any]?) {
         guard let dictionary = dictionary else { return }
-        key = dictionary["Key"] as? Int
         
-        if let value = dictionary["Value"] as? [String:Any] {
-            thumbnail = value["Thumbnail"] as? String
-            list = value["List"] as? String
-            medium = value["Medium"] as? String
-            gallery = value["Gallery"] as? String
-            large = value["Large"] as? String
-            fullSize = value["FullSize"] as? String
-            photoId = value["PhotoId"] as? Int
-        }
+        thumbnail = dictionary["Thumbnail"] as? String
+        list = dictionary["List"] as? String
+        medium = dictionary["Medium"] as? String
+        gallery = dictionary["Gallery"] as? String
+        large = dictionary["Large"] as? String
+        fullSize = dictionary["FullSize"] as? String
+        photoId = dictionary["PhotoId"] as? Int
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case photoId = "PhotoId"
+        case thumbnail = "Thumbnail"
+        case list = "List"
+        case medium = "Medium"
+        case gallery = "Gallery"
+        case large = "Large"
+        case fullSize = "FullSize"
     }
 }
 

@@ -12,6 +12,8 @@ typealias CategoryParsingCompletionHandler = (TMECategory?, String?) -> Void
 typealias ListingParsingCompletionHandler = ([TMESingleListing]?, String?) -> Void
 typealias ListingDetailParsingCompletionHandler = (TMESingleListingDetail?, String?) -> Void
 
+typealias dataParsingCompletionHandler<T> = (T?, String?) -> Void
+
 class TMEDataParser {
     
     static let shared = TMEDataParser()

@@ -1,5 +1,5 @@
 //
-//  TMEDataRequester.swift
+//  TMEService.swift
 //  TM-Demo
 //
 //  Created by Bink Wang on 8/16/18.
@@ -8,14 +8,18 @@
 
 import Foundation
 
-internal let TMEListingPageSize = 20
+internal let TMEListingPageSize = 1
 internal let TMERequestTimeoutInterval = 10.0
 
 typealias DataCompletionHandler = (Data?, Error?) -> Void
 
-class TMEDataRequester {
+typealias EmptySuccessHandler = () -> Void
+typealias SuccessHandler<T> = (_ data: T) -> Void
+typealias FailureHandler = (_ error: Error) -> Void
+
+class TMEService {
     
-    static let shared = TMEDataRequester()
+    static let shared = TMEService()
     
     private init() {
         guard !(TMEConsumerKey.isEmpty) && !(TMEConsumerSecret.isEmpty) else {
@@ -36,6 +40,68 @@ class TMEDataRequester {
         return headers
     }
     
+    private enum API {
+        static let authURL = ""
+        static let baseURL = "https://api.tmsandbox.co.nz/v1"
+    }
+    
+    enum HTTPMethod: String {
+        case get = "GET", post = "POST", delete = "DELETE"
+    }
+    
+    private func buildURLRequest(_ endpoint: String, method: HTTPMethod, parameters: Parameters) -> URLRequest {
+        let url = URL(string: API.baseURL + endpoint)!
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
+        
+        switch method {
+        case .get, .delete:
+            urlRequest.url?.appendQueryParameters(parameters)
+        case .post:
+            urlRequest.httpBody = Data(parameters: parameters)
+        }
+        
+        urlRequest.allHTTPHeaderFields = headersWithAuthorization as [String: String]
+        
+        return urlRequest
+    }
+    
+    private let urlSession = URLSession(configuration: .default)
+    
+    func request<T: Decodable>(_ endpoint: String,
+                               method: HTTPMethod = .get,
+                               parameters: Parameters = [:],
+                               success: ((_ data: T?) -> Void)?,
+                               failure: FailureHandler?) {
+        
+        let urlRequest = buildURLRequest(endpoint, method: method, parameters: parameters)
+        
+        urlSession.dataTask(with: urlRequest) { (data, _, error) in
+            if let data = data {
+                DispatchQueue.global(qos: .utility).async {
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let object = try jsonDecoder.decode(T.self, from: data)
+                        
+                        DispatchQueue.main.async {
+                            success?(object)
+                        }
+                        
+                    } catch let error {
+                        DispatchQueue.main.async {
+                            print("\(error.localizedDescription)")
+                        }
+                    }
+                }
+            } else if let error = error {
+                failure?(error)
+            }
+            }.resume()
+    }
+    
+    //---
     func fetchCategories(completionHandler: @escaping DataCompletionHandler) {
         let headers = ["Cache-Control": "no-cache"]
         let request = NSMutableURLRequest(url: NSURL(string: TMEEndpointAllCategories)! as URL,

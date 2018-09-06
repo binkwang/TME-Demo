@@ -8,17 +8,14 @@
 
 import Foundation
 
-struct TMESingleListing {
+struct TMESingleListing: Decodable {
     var listingId: Int? //--- format: 6866235
     var title: String?
     var subtitle: String?
     var category: String?
     var categoryPath: String?
     var startPrice: Double?
-    var buyNowPrice: Double?
-    var priceDisplay: String? //--- format: $117.00
     var startDate: String?
-    var endDate: String?
     var pictureHref: String?
     var isNew: Bool?
     
@@ -33,14 +30,21 @@ struct TMESingleListing {
         category = dictionary["Category"] as? String
         categoryPath = dictionary["CategoryPath"] as? String
         startPrice = dictionary["StartPrice"] as? Double
-        buyNowPrice = dictionary["BuyNowPrice"] as? Double
-        priceDisplay = dictionary["PriceDisplay"] as? String
         startDate = dictionary["StartDate"] as? String
-        endDate = dictionary["EndDate"] as? String
         pictureHref = dictionary["PictureHref"] as? String
         isNew = dictionary["IsNew"] as? Bool
-        
-        //--- TODO: parse "date" property
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case listingId = "ListingId"
+        case title = "Title"
+        case subtitle = "Subtitle"
+        case category = "Category"
+        case categoryPath = "CategoryPath"
+        case startPrice = "StartPrice"
+        case startDate = "StartDate"
+        case pictureHref = "PictureHref"
+        case isNew = "IsNew"
     }
 }
 

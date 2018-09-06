@@ -66,25 +66,25 @@ extension TMECategoryViewController
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        //-- show listings under selected category
-        leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
-                splitViewController?.showDetailViewController(listingViewController, sender: nil)
-            }
-        }
-        
-        if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
-//            leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories[indexPath.row])
-//            if UIDevice.current.userInterfaceIdiom == .phone {
-//                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
-//                    splitViewController?.showDetailViewController(listingViewController, sender: nil)
-//                }
+//        //-- show listings under selected category
+//        leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories?[indexPath.row])
+//        if UIDevice.current.userInterfaceIdiom == .phone {
+//            if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
+//                splitViewController?.showDetailViewController(listingViewController, sender: nil)
 //            }
+//        }
+        
+        if let isLeaf = category?.subcategories?[indexPath.row].isLeaf, isLeaf {
+            leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories?[indexPath.row])
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
+                    splitViewController?.showDetailViewController(listingViewController, sender: nil)
+                }
+            }
         }
         else {
             if let categoryViewController = storyboard.instantiateViewController(withIdentifier: kTMECategoryViewControllerIdentifier) as? TMECategoryViewController {
-                categoryViewController.category = category?.subcategories[indexPath.row]
+                categoryViewController.category = category?.subcategories?[indexPath.row]
                 categoryViewController.isRootCategoryView = false
 
                 if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
@@ -110,7 +110,7 @@ extension TMECategoryViewController
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = category?.subcategories.count {
+        if let count = category?.subcategories?.count {
             return count
         }
         else {
@@ -126,9 +126,9 @@ extension TMECategoryViewController
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kTMECategoryTableViewCellReuseIdentifier, for: indexPath) as? TMECategoryTableViewCell else {
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }
-        cell.nameLabel.text = category?.subcategories[indexPath.row].name
+        cell.nameLabel.text = category?.subcategories?[indexPath.row].name
         
-        if let isLeaf = category?.subcategories[indexPath.row].isLeaf, isLeaf {
+        if let isLeaf = category?.subcategories?[indexPath.row].isLeaf, isLeaf {
             cell.infoLabel.text = "listing"
         }
         else {

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct TMECategory {
+struct TMECategory: Decodable {
     var name: String?
     var number: String? //--- format: 0001-0268-0269-
     var id: String? //--- used for listing searching, format: 0269
     var path: String?
     var isLeaf: Bool?
-    var subcategories: [TMECategory] = []
+    var subcategories: [TMECategory]?
     
     init() {}
     
@@ -34,14 +34,23 @@ struct TMECategory {
             }
         }
         
+        subcategories =  [TMECategory]()
+        
         let subcategoryArr = dictionary["Subcategories"] as? [[String: Any]]
         subcategoryArr?.forEach({ (subcategoryDic) in
             let subcategory = TMECategory(with: subcategoryDic)
-            subcategories.append(subcategory)
+            subcategories?.append(subcategory)
         })
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case number = "Number"
+        case path = "Path"
+        case isLeaf = "IsLeaf"
+        case subcategories = "Subcategories"
+    }
 }
-
 
 /** Json Example
 {

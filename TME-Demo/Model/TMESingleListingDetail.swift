@@ -8,17 +8,16 @@
 
 import Foundation
 
-struct TMESingleListingDetail {
+struct TMESingleListingDetail: Decodable {
     var listingId: Int? //--- format: 6866235
     var title: String?
     var subtitle: String?
     var category: String?
     var categoryPath: String?
     var startPrice: Double?
-    var buyNowPrice: Double?
     var priceDisplay: String? //--- format: $117.00
     var photoId: Int? //--- format: 3633090
-    var photos: [TMEListingPhoto] = []
+    var photos: [TMEListingPhoto]?
     
     init() {}
     
@@ -31,16 +30,29 @@ struct TMESingleListingDetail {
         category = dictionary["Category"] as? String
         categoryPath = dictionary["CategoryPath"] as? String
         startPrice = dictionary["StartPrice"] as? Double
-        buyNowPrice = dictionary["BuyNowPrice"] as? Double
         priceDisplay = dictionary["PriceDisplay"] as? String
         photoId = dictionary["PhotoId"] as? Int
+        
+        photos = [TMEListingPhoto]()
         
         if let photoArray = dictionary["Photos"] as? [[String:Any]] {
             photoArray.forEach { (photoDictionary) in
                 let photo = TMEListingPhoto.init(with: photoDictionary)
-                photos.append(photo)
+                photos?.append(photo)
             }
         }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case listingId = "ListingId"
+        case title = "Title"
+        case subtitle = "Subtitle"
+        case category = "Category"
+        case categoryPath = "CategoryPath"
+        case startPrice = "StartPrice"
+        case priceDisplay = "PriceDisplay"
+        case photoId = "PhotoId"
+        case photos = "Photos"
     }
 }
 

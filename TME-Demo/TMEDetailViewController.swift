@@ -53,7 +53,7 @@ class TMEDetailViewController: UIViewController {
                 self.idLabel?.text = "\(id)"
                 
                 if photos.count > 0 {
-                    self.imageView?.renderImage(imageUrl: photos[0].fullSize)
+                    self.imageView?.renderImage(imageUrl: photos[0].value?.fullSize)
                 }
             }
         }
