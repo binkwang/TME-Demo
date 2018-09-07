@@ -26,26 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         listingViewController.navigationItem.leftItemsSupplementBackButton = true
         listingViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         
-        
-        
-//        TMEService.shared.fetchCategories(success: { (category) in
-//            print("category: \(category.name)")
-//        }) { (error) in
-//            print("error: \(error.localizedDescription)")
-//        }
-//        
-//        TMEService.shared.fetchListing("0001", success: { (response) in
-//            print("category: \(response.list?.count)")
-//        }) { (error) in
-//            print("error: \(error.localizedDescription)")
-//        }
-//
-//        TMEService.shared.fetchListingDetail(6865995, success: { (detail) in
-//            print("category: \(detail.photos?.count)")
-//        }) { (error) in
-//            print("error: \(error.localizedDescription)")
-//        }
-        
         return true
     }
 }

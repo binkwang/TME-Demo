@@ -11,7 +11,6 @@ import Foundation
 struct TMECategory: Decodable {
     var name: String?
     var number: String? //--- format: 0001-0268-0269-
-    var id: String? //--- used for listing searching, format: 0269
     var path: String?
     var isLeaf: Bool?
     var subcategories: [TMECategory]?
@@ -25,14 +24,6 @@ struct TMECategory: Decodable {
         number = dictionary["Number"] as? String
         path = dictionary["Path"] as? String
         isLeaf = dictionary["IsLeaf"] as? Bool
-        
-        //--- parse "id" property
-        if let number = number, !(number.isEmpty) {
-            let numberComponent: [String] = number.components(separatedBy: "-")
-            if numberComponent.count >= 2 {
-                id = numberComponent[numberComponent.count-2]
-            }
-        }
         
         subcategories =  [TMECategory]()
         
@@ -49,6 +40,17 @@ struct TMECategory: Decodable {
         case path = "Path"
         case isLeaf = "IsLeaf"
         case subcategories = "Subcategories"
+    }
+    
+    var id: String { //--- used for listing searching, format: 0269
+        var id = ""
+        if let number = number, !(number.isEmpty) {
+            let numberComponent: [String] = number.components(separatedBy: "-")
+            if numberComponent.count >= 2 {
+                id = numberComponent[numberComponent.count-2]
+            }
+        }
+        return id
     }
 }
 

@@ -8,9 +8,6 @@
 
 import Foundation
 
-internal let TMEListingPageSize = 1
-internal let TMERequestTimeoutInterval = 10.0
-
 typealias DataCompletionHandler = (Data?, Error?) -> Void
 
 typealias EmptySuccessHandler = () -> Void
@@ -28,6 +25,15 @@ class TMEService {
         }
     }
     
+    private enum API {
+        static let authURL = ""
+        static let baseURL = "https://api.tmsandbox.co.nz/v1"
+    }
+    
+    enum HTTPMethod: String {
+        case get = "GET", post = "POST", delete = "DELETE"
+    }
+    
     private var authorization: String {
         return String(describing: "OAuth oauth_consumer_key=\(TMEConsumerKey), oauth_signature_method=PLAINTEXT, oauth_signature=\(TMEConsumerSecret)")
     }
@@ -40,20 +46,12 @@ class TMEService {
         return headers
     }
     
-    private enum API {
-        static let authURL = ""
-        static let baseURL = "https://api.tmsandbox.co.nz/v1"
-    }
-    
-    enum HTTPMethod: String {
-        case get = "GET", post = "POST", delete = "DELETE"
-    }
-    
     private func buildURLRequest(_ endpoint: String, method: HTTPMethod, parameters: Parameters) -> URLRequest {
         let url = URL(string: API.baseURL + endpoint)!
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
+        urlRequest.timeoutInterval = 10.0
         
         switch method {
         case .get, .delete:
@@ -67,8 +65,6 @@ class TMEService {
         return urlRequest
     }
     
-    private let urlSession = URLSession(configuration: .default)
-    
     func request<T: Decodable>(_ endpoint: String,
                                method: HTTPMethod = .get,
                                parameters: Parameters = [:],
@@ -76,6 +72,8 @@ class TMEService {
                                failure: FailureHandler?) {
         
         let urlRequest = buildURLRequest(endpoint, method: method, parameters: parameters)
+        
+        let urlSession = URLSession(configuration: .default)
         
         urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {
@@ -99,54 +97,5 @@ class TMEService {
                 failure?(error)
             }
             }.resume()
-    }
-    
-    //---
-    func fetchCategories(completionHandler: @escaping DataCompletionHandler) {
-        let headers = ["Cache-Control": "no-cache"]
-        let request = NSMutableURLRequest(url: NSURL(string: TMEEndpointAllCategories)! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: TMERequestTimeoutInterval)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers as [String: String]
-        
-        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            completionHandler(data, error)
-        })
-        dataTask.resume()
-    }
-    
-    func fetchListing(_ catetoryId: String?, completionHandler: @escaping DataCompletionHandler) {
-        guard let catetoryId = catetoryId, !(catetoryId.isEmpty) else { return }
-        
-        //--- example: https://api.trademe.co.nz/v1/Search/General.json?category=3720
-        let url = "\(TMEEndpointGeneralSearch)?category=\(catetoryId)&rows=\(TMEListingPageSize)"
-        let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: TMERequestTimeoutInterval)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headersWithAuthorization as [String: String]
-        
-        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            completionHandler(data, error)
-        })
-        dataTask.resume()
-    }
-    
-    func fetchListingDetail(_ listingId: Int?, completionHandler: @escaping DataCompletionHandler) {
-        guard let listingId = listingId else { return }
-        
-        //--- example: https://api.tmsandbox.co.nz/v1/Listings/6866235.json
-        let url = "\(TMEEndpointListingDetail)\(listingId).json"
-        let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: TMERequestTimeoutInterval)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headersWithAuthorization as [String: String]
-        
-        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            completionHandler(data, error)
-        })
-        dataTask.resume()
     }
 }

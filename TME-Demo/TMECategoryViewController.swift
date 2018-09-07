@@ -37,14 +37,13 @@ class TMECategoryViewController: UITableViewController {
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
         if isRootCategoryView {
-            TMEDataCenter.shared.fetchRootCategory { [weak self] (rootCategory, errString) in
+            
+            TMEService.shared.fetchCategories(success: { [weak self] (category) in
                 guard let strongSelf = self else { return }
-                if let errString = errString {
-                    strongSelf.showAlert("ERROR", "\(errString)")
-                }
-                else if let rootCategory = rootCategory {
-                    strongSelf.category = rootCategory
-                }
+                strongSelf.category = category
+            }) { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.showAlert("ERROR", "\(error.localizedDescription)")
             }
         }
     }
@@ -65,14 +64,6 @@ extension TMECategoryViewController
         print(indexPath.section as Any, indexPath.row as Any)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-//        //-- show listings under selected category
-//        leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories?[indexPath.row])
-//        if UIDevice.current.userInterfaceIdiom == .phone {
-//            if let listingViewController = leafCategorySelectionDelegate as? TMEListingViewController {
-//                splitViewController?.showDetailViewController(listingViewController, sender: nil)
-//            }
-//        }
         
         if let isLeaf = category?.subcategories?[indexPath.row].isLeaf, isLeaf {
             leafCategorySelectionDelegate?.leafCategorySelected(category?.subcategories?[indexPath.row])

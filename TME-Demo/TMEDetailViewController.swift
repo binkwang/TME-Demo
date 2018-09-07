@@ -18,14 +18,12 @@ class TMEDetailViewController: UIViewController {
     
     var listingId: Int? {
         didSet {
-            TMEDataCenter.shared.fetchListingDetail(listingId) { [weak self] (listingDetail, errString) in
+            TMEService.shared.fetchListingDetail(listingId!, success: { [weak self] (listingDetail) in
                 guard let strongSelf = self else { return }
-                if let errString = errString {
-                    strongSelf.showAlert("ERROR", "\(errString)")
-                }
-                else if let listingDetail = listingDetail {
-                    strongSelf.listingDetail = listingDetail
-                }
+                strongSelf.listingDetail = listingDetail
+            }) { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.showAlert("ERROR", "\(error.localizedDescription)")
             }
         }
     }

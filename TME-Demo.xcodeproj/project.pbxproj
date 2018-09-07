@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		237215582125426300A1669D /* UIImageView+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215572125426300A1669D /* UIImageView+TME.swift */; };
 		2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215592126BF7100A1669D /* TMEServiceConfig.swift */; };
-		2372155C2126FF6500A1669D /* TMEDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372155B2126FF6500A1669D /* TMEDataCenter.swift */; };
 		237215602127CDB600A1669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2372155F2127CDB600A1669D /* Main.storyboard */; };
 		238301502124638E0075302B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383014F2124638E0075302B /* AppDelegate.swift */; };
 		238301522124638E0075302B /* TMECategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301512124638E0075302B /* TMECategoryViewController.swift */; };
@@ -22,9 +21,7 @@
 		23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830184212464990075302B /* TMECategoryTableViewCell.swift */; };
 		2383018A212464B10075302B /* TMESingleListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830188212464B10075302B /* TMESingleListing.swift */; };
 		2383018B212464B10075302B /* TMECategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830189212464B10075302B /* TMECategory.swift */; };
-		2383018F212464E90075302B /* String+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383018D212464E90075302B /* String+TME.swift */; };
 		23830190212464E90075302B /* UIViewController+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383018E212464E90075302B /* UIViewController+TME.swift */; };
-		23830194212465060075302B /* TMEDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830192212465060075302B /* TMEDataParser.swift */; };
 		23830195212465060075302B /* TMEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830193212465060075302B /* TMEService.swift */; };
 		238301982124651D0075302B /* TMEDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301962124651D0075302B /* TMEDetailViewController.swift */; };
 		238301992124651D0075302B /* TMEListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301972124651D0075302B /* TMEListingViewController.swift */; };
@@ -35,7 +32,6 @@
 		238301A721252FC20075302B /* TMEListingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301A621252FC20075302B /* TMEListingPhoto.swift */; };
 		23EE22172140D7F000057BC1 /* URL+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE22162140D7F000057BC1 /* URL+TME.swift */; };
 		23EE22192140D9EA00057BC1 /* Data+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE22182140D9EA00057BC1 /* Data+TME.swift */; };
-		23EE221B2140DD4900057BC1 /* TMEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE221A2140DD4900057BC1 /* TMEResponse.swift */; };
 		23EE221F214150FC00057BC1 /* TMEService+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE221E214150FC00057BC1 /* TMEService+.swift */; };
 		23EE222121415ABD00057BC1 /* TMEGeneralSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE222021415ABD00057BC1 /* TMEGeneralSearchResponse.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +56,6 @@
 /* Begin PBXFileReference section */
 		237215572125426300A1669D /* UIImageView+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+TME.swift"; sourceTree = "<group>"; };
 		237215592126BF7100A1669D /* TMEServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEServiceConfig.swift; sourceTree = "<group>"; };
-		2372155B2126FF6500A1669D /* TMEDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEDataCenter.swift; sourceTree = "<group>"; };
 		2372155F2127CDB600A1669D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2383014C2124638E0075302B /* TME-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TME-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2383014F2124638E0075302B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +74,7 @@
 		23830184212464990075302B /* TMECategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategoryTableViewCell.swift; sourceTree = "<group>"; };
 		23830188212464B10075302B /* TMESingleListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMESingleListing.swift; sourceTree = "<group>"; };
 		23830189212464B10075302B /* TMECategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategory.swift; sourceTree = "<group>"; };
-		2383018D212464E90075302B /* String+TME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+TME.swift"; sourceTree = "<group>"; };
 		2383018E212464E90075302B /* UIViewController+TME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TME.swift"; sourceTree = "<group>"; };
-		23830192212465060075302B /* TMEDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDataParser.swift; sourceTree = "<group>"; };
 		23830193212465060075302B /* TMEService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEService.swift; sourceTree = "<group>"; };
 		238301962124651D0075302B /* TMEDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDetailViewController.swift; sourceTree = "<group>"; };
 		238301972124651D0075302B /* TMEListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEListingViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +85,6 @@
 		238301A621252FC20075302B /* TMEListingPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEListingPhoto.swift; sourceTree = "<group>"; };
 		23EE22162140D7F000057BC1 /* URL+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+TME.swift"; sourceTree = "<group>"; };
 		23EE22182140D9EA00057BC1 /* Data+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+TME.swift"; sourceTree = "<group>"; };
-		23EE221A2140DD4900057BC1 /* TMEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEResponse.swift; sourceTree = "<group>"; };
 		23EE221E214150FC00057BC1 /* TMEService+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMEService+.swift"; sourceTree = "<group>"; };
 		23EE222021415ABD00057BC1 /* TMEGeneralSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEGeneralSearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,9 +137,9 @@
 		2383014E2124638E0075302B /* TME-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				23830187212464A90075302B /* Model */,
 				23830191212464FD0075302B /* DataService */,
 				2383018C212464DA0075302B /* Extention */,
-				23830187212464A90075302B /* Model */,
 				238301822124648D0075302B /* UI */,
 				2383017F212464610075302B /* Assets */,
 				2383014F2124638E0075302B /* AppDelegate.swift */,
@@ -215,7 +207,6 @@
 		2383018C212464DA0075302B /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				2383018D212464E90075302B /* String+TME.swift */,
 				2383018E212464E90075302B /* UIViewController+TME.swift */,
 				237215572125426300A1669D /* UIImageView+TME.swift */,
 			);
@@ -228,11 +219,8 @@
 				237215592126BF7100A1669D /* TMEServiceConfig.swift */,
 				23830193212465060075302B /* TMEService.swift */,
 				23EE221E214150FC00057BC1 /* TMEService+.swift */,
-				23830192212465060075302B /* TMEDataParser.swift */,
-				2372155B2126FF6500A1669D /* TMEDataCenter.swift */,
 				23EE22162140D7F000057BC1 /* URL+TME.swift */,
 				23EE22182140D9EA00057BC1 /* Data+TME.swift */,
-				23EE221A2140DD4900057BC1 /* TMEResponse.swift */,
 			);
 			path = DataService;
 			sourceTree = "<group>";
@@ -373,14 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				238301A5212529020075302B /* TMESingleListingDetail.swift in Sources */,
-				23EE221B2140DD4900057BC1 /* TMEResponse.swift in Sources */,
 				23830190212464E90075302B /* UIViewController+TME.swift in Sources */,
 				2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */,
 				238301522124638E0075302B /* TMECategoryViewController.swift in Sources */,
 				238301992124651D0075302B /* TMEListingViewController.swift in Sources */,
 				238301A721252FC20075302B /* TMEListingPhoto.swift in Sources */,
 				238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */,
-				23830194212465060075302B /* TMEDataParser.swift in Sources */,
 				23EE22172140D7F000057BC1 /* URL+TME.swift in Sources */,
 				23EE221F214150FC00057BC1 /* TMEService+.swift in Sources */,
 				2383018B212464B10075302B /* TMECategory.swift in Sources */,
@@ -392,8 +378,6 @@
 				238301982124651D0075302B /* TMEDetailViewController.swift in Sources */,
 				23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */,
 				237215582125426300A1669D /* UIImageView+TME.swift in Sources */,
-				2383018F212464E90075302B /* String+TME.swift in Sources */,
-				2372155C2126FF6500A1669D /* TMEDataCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

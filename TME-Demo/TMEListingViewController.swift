@@ -20,14 +20,13 @@ class TMEListingViewController: UITableViewController {
     
     var category: TMECategory? {
         didSet {
-            TMEDataCenter.shared.fetchListing(category?.id) { [weak self] (listings, errString) in
+            TMEService.shared.fetchListing((category?.id)!, success: { [weak self] (generalSearchResponse) in
                 guard let strongSelf = self else { return }
-                if let errString = errString {
-                    strongSelf.showAlert("ERROR", "\(errString)")
-                }
-                else if let listings = listings {
-                    strongSelf.listings = listings
-                }
+                strongSelf.listings = generalSearchResponse.list
+                
+            }) { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.showAlert("ERROR", "\(error.localizedDescription)")
             }
         }
     }
