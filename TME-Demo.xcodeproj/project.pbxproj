@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		237215582125426300A1669D /* UIImageView+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215572125426300A1669D /* UIImageView+TME.swift */; };
-		2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237215592126BF7100A1669D /* TMEServiceConfig.swift */; };
 		237215602127CDB600A1669D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2372155F2127CDB600A1669D /* Main.storyboard */; };
 		238301502124638E0075302B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383014F2124638E0075302B /* AppDelegate.swift */; };
 		238301522124638E0075302B /* TMECategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301512124638E0075302B /* TMECategoryViewController.swift */; };
@@ -19,21 +18,13 @@
 		238301812124647C0075302B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 238301802124647C0075302B /* arrow.png */; };
 		23830185212464990075302B /* TMECategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23830183212464990075302B /* TMECategoryTableViewCell.xib */; };
 		23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830184212464990075302B /* TMECategoryTableViewCell.swift */; };
-		2383018A212464B10075302B /* TMESingleListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830188212464B10075302B /* TMESingleListing.swift */; };
-		2383018B212464B10075302B /* TMECategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830189212464B10075302B /* TMECategory.swift */; };
 		23830190212464E90075302B /* UIViewController+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383018E212464E90075302B /* UIViewController+TME.swift */; };
-		23830195212465060075302B /* TMEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23830193212465060075302B /* TMEService.swift */; };
 		238301982124651D0075302B /* TMEDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301962124651D0075302B /* TMEDetailViewController.swift */; };
 		238301992124651D0075302B /* TMEListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301972124651D0075302B /* TMEListingViewController.swift */; };
 		238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383019E21250BB10075302B /* TMEListingTableViewCell.swift */; };
 		238301A121250BB10075302B /* TMEListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2383019F21250BB10075302B /* TMEListingTableViewCell.xib */; };
 		238301A321251B0F0075302B /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238301A221251B0E0075302B /* default.jpg */; };
-		238301A5212529020075302B /* TMESingleListingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301A4212529020075302B /* TMESingleListingDetail.swift */; };
-		238301A721252FC20075302B /* TMEListingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238301A621252FC20075302B /* TMEListingPhoto.swift */; };
-		23EE22172140D7F000057BC1 /* URL+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE22162140D7F000057BC1 /* URL+TME.swift */; };
-		23EE22192140D9EA00057BC1 /* Data+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE22182140D9EA00057BC1 /* Data+TME.swift */; };
-		23EE221F214150FC00057BC1 /* TMEService+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE221E214150FC00057BC1 /* TMEService+.swift */; };
-		23EE222121415ABD00057BC1 /* TMEGeneralSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE222021415ABD00057BC1 /* TMEGeneralSearchResponse.swift */; };
+		5AA427C73E25DB806B294218 /* Pods_TME_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7455F7449C3DE723321CF09C /* Pods_TME_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		237215572125426300A1669D /* UIImageView+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+TME.swift"; sourceTree = "<group>"; };
-		237215592126BF7100A1669D /* TMEServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEServiceConfig.swift; sourceTree = "<group>"; };
 		2372155F2127CDB600A1669D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2383014C2124638E0075302B /* TME-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TME-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2383014F2124638E0075302B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,21 +62,15 @@
 		238301802124647C0075302B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		23830183212464990075302B /* TMECategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TMECategoryTableViewCell.xib; sourceTree = "<group>"; };
 		23830184212464990075302B /* TMECategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategoryTableViewCell.swift; sourceTree = "<group>"; };
-		23830188212464B10075302B /* TMESingleListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMESingleListing.swift; sourceTree = "<group>"; };
-		23830189212464B10075302B /* TMECategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMECategory.swift; sourceTree = "<group>"; };
 		2383018E212464E90075302B /* UIViewController+TME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TME.swift"; sourceTree = "<group>"; };
-		23830193212465060075302B /* TMEService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEService.swift; sourceTree = "<group>"; };
 		238301962124651D0075302B /* TMEDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEDetailViewController.swift; sourceTree = "<group>"; };
 		238301972124651D0075302B /* TMEListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMEListingViewController.swift; sourceTree = "<group>"; };
 		2383019E21250BB10075302B /* TMEListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEListingTableViewCell.swift; sourceTree = "<group>"; };
 		2383019F21250BB10075302B /* TMEListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TMEListingTableViewCell.xib; sourceTree = "<group>"; };
 		238301A221251B0E0075302B /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
-		238301A4212529020075302B /* TMESingleListingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMESingleListingDetail.swift; sourceTree = "<group>"; };
-		238301A621252FC20075302B /* TMEListingPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEListingPhoto.swift; sourceTree = "<group>"; };
-		23EE22162140D7F000057BC1 /* URL+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+TME.swift"; sourceTree = "<group>"; };
-		23EE22182140D9EA00057BC1 /* Data+TME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+TME.swift"; sourceTree = "<group>"; };
-		23EE221E214150FC00057BC1 /* TMEService+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMEService+.swift"; sourceTree = "<group>"; };
-		23EE222021415ABD00057BC1 /* TMEGeneralSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMEGeneralSearchResponse.swift; sourceTree = "<group>"; };
+		303400AD354CCE7DA940ABA3 /* Pods-TME-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TME-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TME-Demo/Pods-TME-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		6027034A05F3E10F7327F33C /* Pods-TME-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TME-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TME-Demo/Pods-TME-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7455F7449C3DE723321CF09C /* Pods_TME_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TME_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA427C73E25DB806B294218 /* Pods_TME_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +106,8 @@
 				238301632124638F0075302B /* TME-DemoTests */,
 				2383016E2124638F0075302B /* TME-DemoUITests */,
 				2383014D2124638E0075302B /* Products */,
+				DD5CCD93007BACB7D9A80564 /* Pods */,
+				DACA435449E466B660456DBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,8 +124,6 @@
 		2383014E2124638E0075302B /* TME-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				23830187212464A90075302B /* Model */,
-				23830191212464FD0075302B /* DataService */,
 				2383018C212464DA0075302B /* Extention */,
 				238301822124648D0075302B /* UI */,
 				2383017F212464610075302B /* Assets */,
@@ -192,18 +177,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		23830187212464A90075302B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				23830189212464B10075302B /* TMECategory.swift */,
-				23EE222021415ABD00057BC1 /* TMEGeneralSearchResponse.swift */,
-				23830188212464B10075302B /* TMESingleListing.swift */,
-				238301A4212529020075302B /* TMESingleListingDetail.swift */,
-				238301A621252FC20075302B /* TMEListingPhoto.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2383018C212464DA0075302B /* Extention */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,16 +186,21 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
-		23830191212464FD0075302B /* DataService */ = {
+		DACA435449E466B660456DBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				237215592126BF7100A1669D /* TMEServiceConfig.swift */,
-				23830193212465060075302B /* TMEService.swift */,
-				23EE221E214150FC00057BC1 /* TMEService+.swift */,
-				23EE22162140D7F000057BC1 /* URL+TME.swift */,
-				23EE22182140D9EA00057BC1 /* Data+TME.swift */,
+				7455F7449C3DE723321CF09C /* Pods_TME_Demo.framework */,
 			);
-			path = DataService;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD5CCD93007BACB7D9A80564 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6027034A05F3E10F7327F33C /* Pods-TME-Demo.debug.xcconfig */,
+				303400AD354CCE7DA940ABA3 /* Pods-TME-Demo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 238301742124638F0075302B /* Build configuration list for PBXNativeTarget "TME-Demo" */;
 			buildPhases = (
+				565EB05592D1D005F993D3F9 /* [CP] Check Pods Manifest.lock */,
 				238301482124638E0075302B /* Sources */,
 				238301492124638E0075302B /* Frameworks */,
 				2383014A2124638E0075302B /* Resources */,
+				6BF61CF61D1C6B64D14D6DF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,26 +335,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		565EB05592D1D005F993D3F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TME-Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF61CF61D1C6B64D14D6DF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TME-Demo/Pods-TME-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftTMEService/SwiftTMEService.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTMEService.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TME-Demo/Pods-TME-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		238301482124638E0075302B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				238301A5212529020075302B /* TMESingleListingDetail.swift in Sources */,
 				23830190212464E90075302B /* UIViewController+TME.swift in Sources */,
-				2372155A2126BF7100A1669D /* TMEServiceConfig.swift in Sources */,
 				238301522124638E0075302B /* TMECategoryViewController.swift in Sources */,
 				238301992124651D0075302B /* TMEListingViewController.swift in Sources */,
-				238301A721252FC20075302B /* TMEListingPhoto.swift in Sources */,
 				238301A021250BB10075302B /* TMEListingTableViewCell.swift in Sources */,
-				23EE22172140D7F000057BC1 /* URL+TME.swift in Sources */,
-				23EE221F214150FC00057BC1 /* TMEService+.swift in Sources */,
-				2383018B212464B10075302B /* TMECategory.swift in Sources */,
 				238301502124638E0075302B /* AppDelegate.swift in Sources */,
-				23EE222121415ABD00057BC1 /* TMEGeneralSearchResponse.swift in Sources */,
-				23830195212465060075302B /* TMEService.swift in Sources */,
-				2383018A212464B10075302B /* TMESingleListing.swift in Sources */,
-				23EE22192140D9EA00057BC1 /* Data+TME.swift in Sources */,
 				238301982124651D0075302B /* TMEDetailViewController.swift in Sources */,
 				23830186212464990075302B /* TMECategoryTableViewCell.swift in Sources */,
 				237215582125426300A1669D /* UIImageView+TME.swift in Sources */,
@@ -540,6 +549,7 @@
 		};
 		238301752124638F0075302B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6027034A05F3E10F7327F33C /* Pods-TME-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +567,7 @@
 		};
 		238301762124638F0075302B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 303400AD354CCE7DA940ABA3 /* Pods-TME-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

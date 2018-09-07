@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		103A4157D0157867148382C407F30BF6 /* Pods-TME-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B344E6D67B96BA9E6795CBFE4E3C74BC /* Pods-TME-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		200714891D612D66128F070B91266F0D /* TMEService+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF546AB2885485E50837C9909FC9A72 /* TMEService+.swift */; };
+		34E9B586DE646943C0F08E31600C24CC /* TMEGeneralSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAC937F4B6E38F7FA0B7223BA74FCA /* TMEGeneralSearchResponse.swift */; };
+		5859CB1092472C9DE947277891833DC1 /* Pods-TME-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D6BBE717B24412495A3150B3187075 /* Pods-TME-Demo-dummy.m */; };
+		585FE787716F134DE31F28B6316E2585 /* Data+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD446DA811C919B3EC7572D7247C6 /* Data+TME.swift */; };
+		6E24963B0BDF60F85D1E63E036B21351 /* TMEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9BF263B3FBCA18CBEECEC77E25F485 /* TMEService.swift */; };
+		797A6BFA9485DD28028C62C2631BDE51 /* TMESingleListingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872BFD48C7FEA0AADD868359C0372AB9 /* TMESingleListingDetail.swift */; };
+		7B93157AAEED66CAA2D168C8659F2B7E /* TMEListingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64503824A6CD79C3331547231A684A92 /* TMEListingPhoto.swift */; };
+		7F2141DA6C67FC139A4CE15FD0FAEB97 /* SwiftTMEService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 619439D94FCD0EDF3C6396C0A7CF9FED /* SwiftTMEService-dummy.m */; };
+		7F69ED3F7FC8C672207AB78F9B4B7BE6 /* SwiftTMEService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 988989F17D607A2C11176C7082AE2318 /* SwiftTMEService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9194509447CF877BD285ABC0FDD91971 /* URL+TME.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC0F136E05EAC19ECFFD4FFC6A1C5B /* URL+TME.swift */; };
+		AAD4DEB1BC54CD00343329D0A26DE1C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		B9B64FEC25C8426EFEA2CD06EB333B99 /* TMECategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE04EFEC7FDC086EB1BF5669864AA6B /* TMECategory.swift */; };
+		C2247E3CFC3BE84FAE74107FF8D4C3B8 /* TMESingleListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F15A6E131BF7DC369778A9E73E4185 /* TMESingleListing.swift */; };
+		C891CC41DF4B2E643319890100950D11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C4E65B843F0B08154D344A8FEC91EEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 707919A992398A4F5E3EB98DA2C705C5;
+			remoteInfo = SwiftTMEService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B3FAD2520BCCE7E9E0E162049797E24 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA03BB0A8975BCC8A9ADF23807FA259 /* Pods-TME-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TME-Demo-resources.sh"; sourceTree = "<group>"; };
+		326F3CBFBC81DD9919F91E8A28472B6F /* Pods-TME-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TME-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		508C669B2EE17FEC3F413AC8F12E47CA /* SwiftTMEService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftTMEService.framework; path = SwiftTMEService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54AAC937F4B6E38F7FA0B7223BA74FCA /* TMEGeneralSearchResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMEGeneralSearchResponse.swift; path = SwiftTMEService/Classes/Models/TMEGeneralSearchResponse.swift; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		619439D94FCD0EDF3C6396C0A7CF9FED /* SwiftTMEService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftTMEService-dummy.m"; sourceTree = "<group>"; };
+		61D9A19E231A7A36C6F0148BAD111992 /* Pods-TME-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TME-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		64503824A6CD79C3331547231A684A92 /* TMEListingPhoto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMEListingPhoto.swift; path = SwiftTMEService/Classes/Models/TMEListingPhoto.swift; sourceTree = "<group>"; };
+		725938831BCD68DCCF8414501391EFAD /* Pods-TME-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TME-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		7868DB0437532E92B6A86F10D30B3DB7 /* SwiftTMEService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftTMEService.modulemap; sourceTree = "<group>"; };
+		7BF546AB2885485E50837C9909FC9A72 /* TMEService+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TMEService+.swift"; path = "SwiftTMEService/Classes/Service/TMEService+.swift"; sourceTree = "<group>"; };
+		81D6BBE717B24412495A3150B3187075 /* Pods-TME-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TME-Demo-dummy.m"; sourceTree = "<group>"; };
+		872BFD48C7FEA0AADD868359C0372AB9 /* TMESingleListingDetail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMESingleListingDetail.swift; path = SwiftTMEService/Classes/Models/TMESingleListingDetail.swift; sourceTree = "<group>"; };
+		8FCB936144B8BE658B34D4D559B8A2E9 /* Pods-TME-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TME-Demo-frameworks.sh"; sourceTree = "<group>"; };
+		9130423A792B67D2BE3F364EDED6E5BD /* Pods-TME-Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TME-Demo.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		988989F17D607A2C11176C7082AE2318 /* SwiftTMEService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftTMEService-umbrella.h"; sourceTree = "<group>"; };
+		9DE04EFEC7FDC086EB1BF5669864AA6B /* TMECategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMECategory.swift; path = SwiftTMEService/Classes/Models/TMECategory.swift; sourceTree = "<group>"; };
+		A402D5F513EC9EA1080587D9FECE01FE /* Pods_TME_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TME_Demo.framework; path = "Pods-TME-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECC0F136E05EAC19ECFFD4FFC6A1C5B /* URL+TME.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+TME.swift"; path = "SwiftTMEService/Classes/Service/URL+TME.swift"; sourceTree = "<group>"; };
+		B344E6D67B96BA9E6795CBFE4E3C74BC /* Pods-TME-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TME-Demo-umbrella.h"; sourceTree = "<group>"; };
+		B7745480FF3027F256F980879D1F424A /* SwiftTMEService-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftTMEService-prefix.pch"; sourceTree = "<group>"; };
+		BC9BF263B3FBCA18CBEECEC77E25F485 /* TMEService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMEService.swift; path = SwiftTMEService/Classes/Service/TMEService.swift; sourceTree = "<group>"; };
+		D248236C063077E0D824A37B00C59047 /* SwiftTMEService.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftTMEService.xcconfig; sourceTree = "<group>"; };
+		E2A1C7052E9EC47498E6B9DF1216F8E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E71BCF1E0B775E106C9E5AC8395D4C23 /* Pods-TME-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TME-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F0F15A6E131BF7DC369778A9E73E4185 /* TMESingleListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TMESingleListing.swift; path = SwiftTMEService/Classes/Models/TMESingleListing.swift; sourceTree = "<group>"; };
+		FC5DD446DA811C919B3EC7572D7247C6 /* Data+TME.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+TME.swift"; path = "SwiftTMEService/Classes/Service/Data+TME.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D30B94758B84E564EC46768B42624EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD4DEB1BC54CD00343329D0A26DE1C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98170F48AF7D819410B9743F8144AEEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C891CC41DF4B2E643319890100950D11 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		264D85202B65244C0CEBDC931D1F6ADF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B3FAD2520BCCE7E9E0E162049797E24 /* Info.plist */,
+				7868DB0437532E92B6A86F10D30B3DB7 /* SwiftTMEService.modulemap */,
+				D248236C063077E0D824A37B00C59047 /* SwiftTMEService.xcconfig */,
+				619439D94FCD0EDF3C6396C0A7CF9FED /* SwiftTMEService-dummy.m */,
+				B7745480FF3027F256F980879D1F424A /* SwiftTMEService-prefix.pch */,
+				988989F17D607A2C11176C7082AE2318 /* SwiftTMEService-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftTMEService";
+			sourceTree = "<group>";
+		};
+		278CCFF5F9C68D415996C3971F2EBF52 /* SwiftTMEService */ = {
+			isa = PBXGroup;
+			children = (
+				FC5DD446DA811C919B3EC7572D7247C6 /* Data+TME.swift */,
+				9DE04EFEC7FDC086EB1BF5669864AA6B /* TMECategory.swift */,
+				54AAC937F4B6E38F7FA0B7223BA74FCA /* TMEGeneralSearchResponse.swift */,
+				64503824A6CD79C3331547231A684A92 /* TMEListingPhoto.swift */,
+				BC9BF263B3FBCA18CBEECEC77E25F485 /* TMEService.swift */,
+				7BF546AB2885485E50837C9909FC9A72 /* TMEService+.swift */,
+				F0F15A6E131BF7DC369778A9E73E4185 /* TMESingleListing.swift */,
+				872BFD48C7FEA0AADD868359C0372AB9 /* TMESingleListingDetail.swift */,
+				AECC0F136E05EAC19ECFFD4FFC6A1C5B /* URL+TME.swift */,
+				264D85202B65244C0CEBDC931D1F6ADF /* Support Files */,
+			);
+			name = SwiftTMEService;
+			path = SwiftTMEService;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F260698FC5C9C6B392CDE626059B67B0 /* Pods */,
+				7EA69CA7B78123466D039C3C38881575 /* Products */,
+				DDDBECCC71627855B0E54D5CE593CEBE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7EA69CA7B78123466D039C3C38881575 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A402D5F513EC9EA1080587D9FECE01FE /* Pods_TME_Demo.framework */,
+				508C669B2EE17FEC3F413AC8F12E47CA /* SwiftTMEService.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91063EE34282DF26C221BEBAF5A33BAF /* Pods-TME-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E2A1C7052E9EC47498E6B9DF1216F8E1 /* Info.plist */,
+				9130423A792B67D2BE3F364EDED6E5BD /* Pods-TME-Demo.modulemap */,
+				E71BCF1E0B775E106C9E5AC8395D4C23 /* Pods-TME-Demo-acknowledgements.markdown */,
+				326F3CBFBC81DD9919F91E8A28472B6F /* Pods-TME-Demo-acknowledgements.plist */,
+				81D6BBE717B24412495A3150B3187075 /* Pods-TME-Demo-dummy.m */,
+				8FCB936144B8BE658B34D4D559B8A2E9 /* Pods-TME-Demo-frameworks.sh */,
+				2FA03BB0A8975BCC8A9ADF23807FA259 /* Pods-TME-Demo-resources.sh */,
+				B344E6D67B96BA9E6795CBFE4E3C74BC /* Pods-TME-Demo-umbrella.h */,
+				61D9A19E231A7A36C6F0148BAD111992 /* Pods-TME-Demo.debug.xcconfig */,
+				725938831BCD68DCCF8414501391EFAD /* Pods-TME-Demo.release.xcconfig */,
+			);
+			name = "Pods-TME-Demo";
+			path = "Target Support Files/Pods-TME-Demo";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDDBECCC71627855B0E54D5CE593CEBE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91063EE34282DF26C221BEBAF5A33BAF /* Pods-TME-Demo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F260698FC5C9C6B392CDE626059B67B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				278CCFF5F9C68D415996C3971F2EBF52 /* SwiftTMEService */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1F9DA560EE97EC5EE462B2B712B1F4BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				103A4157D0157867148382C407F30BF6 /* Pods-TME-Demo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A32B40497F401CC2E6FD07BA4247443 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F69ED3F7FC8C672207AB78F9B4B7BE6 /* SwiftTMEService-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		195DC65ABA19D200FE9CDFAD2947B239 /* Pods-TME-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0D75D592BE3CEA62C663A5D7B0951EA /* Build configuration list for PBXNativeTarget "Pods-TME-Demo" */;
+			buildPhases = (
+				2E41C59BAE5D4FCAF98076176F10C1C0 /* Sources */,
+				98170F48AF7D819410B9743F8144AEEA /* Frameworks */,
+				1F9DA560EE97EC5EE462B2B712B1F4BF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF50F412DA24E13286DC0613B4E73EA /* PBXTargetDependency */,
+			);
+			name = "Pods-TME-Demo";
+			productName = "Pods-TME-Demo";
+			productReference = A402D5F513EC9EA1080587D9FECE01FE /* Pods_TME_Demo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		707919A992398A4F5E3EB98DA2C705C5 /* SwiftTMEService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 736B43324067D511064FA6A9256FBBCE /* Build configuration list for PBXNativeTarget "SwiftTMEService" */;
+			buildPhases = (
+				39A9914F7A7EF035AF29AEE576A5586E /* Sources */,
+				1D30B94758B84E564EC46768B42624EC /* Frameworks */,
+				5A32B40497F401CC2E6FD07BA4247443 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftTMEService;
+			productName = SwiftTMEService;
+			productReference = 508C669B2EE17FEC3F413AC8F12E47CA /* SwiftTMEService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7EA69CA7B78123466D039C3C38881575 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				195DC65ABA19D200FE9CDFAD2947B239 /* Pods-TME-Demo */,
+				707919A992398A4F5E3EB98DA2C705C5 /* SwiftTMEService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E41C59BAE5D4FCAF98076176F10C1C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5859CB1092472C9DE947277891833DC1 /* Pods-TME-Demo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39A9914F7A7EF035AF29AEE576A5586E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585FE787716F134DE31F28B6316E2585 /* Data+TME.swift in Sources */,
+				7F2141DA6C67FC139A4CE15FD0FAEB97 /* SwiftTMEService-dummy.m in Sources */,
+				B9B64FEC25C8426EFEA2CD06EB333B99 /* TMECategory.swift in Sources */,
+				34E9B586DE646943C0F08E31600C24CC /* TMEGeneralSearchResponse.swift in Sources */,
+				7B93157AAEED66CAA2D168C8659F2B7E /* TMEListingPhoto.swift in Sources */,
+				200714891D612D66128F070B91266F0D /* TMEService+.swift in Sources */,
+				6E24963B0BDF60F85D1E63E036B21351 /* TMEService.swift in Sources */,
+				C2247E3CFC3BE84FAE74107FF8D4C3B8 /* TMESingleListing.swift in Sources */,
+				797A6BFA9485DD28028C62C2631BDE51 /* TMESingleListingDetail.swift in Sources */,
+				9194509447CF877BD285ABC0FDD91971 /* URL+TME.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDF50F412DA24E13286DC0613B4E73EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftTMEService;
+			target = 707919A992398A4F5E3EB98DA2C705C5 /* SwiftTMEService */;
+			targetProxy = 9C4E65B843F0B08154D344A8FEC91EEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03E3B65A02007DE7920795BB105616A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D248236C063077E0D824A37B00C59047 /* SwiftTMEService.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftTMEService/SwiftTMEService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftTMEService/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftTMEService/SwiftTMEService.modulemap";
+				PRODUCT_MODULE_NAME = SwiftTMEService;
+				PRODUCT_NAME = SwiftTMEService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3707C79854B88AF5C7BC922C79E67059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725938831BCD68DCCF8414501391EFAD /* Pods-TME-Demo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TME-Demo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TME-Demo/Pods-TME-Demo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5440E1B3C2E04E77EB1D96D9C1357503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D248236C063077E0D824A37B00C59047 /* SwiftTMEService.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftTMEService/SwiftTMEService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftTMEService/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftTMEService/SwiftTMEService.modulemap";
+				PRODUCT_MODULE_NAME = SwiftTMEService;
+				PRODUCT_NAME = SwiftTMEService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B0453CDBB11C85CBF679AC4CB0AD705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61D9A19E231A7A36C6F0148BAD111992 /* Pods-TME-Demo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TME-Demo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TME-Demo/Pods-TME-Demo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		736B43324067D511064FA6A9256FBBCE /* Build configuration list for PBXNativeTarget "SwiftTMEService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5440E1B3C2E04E77EB1D96D9C1357503 /* Debug */,
+				03E3B65A02007DE7920795BB105616A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0D75D592BE3CEA62C663A5D7B0951EA /* Build configuration list for PBXNativeTarget "Pods-TME-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B0453CDBB11C85CBF679AC4CB0AD705 /* Debug */,
+				3707C79854B88AF5C7BC922C79E67059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

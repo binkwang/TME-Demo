@@ -1,0 +1,16 @@
+PODS:
+  - SwiftTMEService (0.2.0)
+
+DEPENDENCIES:
+  - SwiftTMEService
+
+SPEC REPOS:
+  https://github.com/hanmbink/bink-private-specs.git:
+    - SwiftTMEService
+
+SPEC CHECKSUMS:
+  SwiftTMEService: d68fc6bb29a02e765cf3ab9e294340cb4ba2c7a6
+
+PODFILE CHECKSUM: a233aed58e289ad5760468408ba70c9d057715ac
+
+COCOAPODS: 1.5.3

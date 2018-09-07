@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTMEService
 
 protocol LeafCategorySelectionDelegate: class {
     func leafCategorySelected(_ category: TMECategory?)

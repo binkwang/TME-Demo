@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TMEGeneralSearchResponse: Decodable {
-    var totalCount: Int?
-    var list: [TMESingleListing]?
+public struct TMEGeneralSearchResponse: Decodable {
+    public var totalCount: Int?
+    public var list: [TMESingleListing]?
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "TotalCount"

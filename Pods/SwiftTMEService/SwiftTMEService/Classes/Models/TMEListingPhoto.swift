@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TMEListingPhoto: Decodable {
-    var key: Int? //--- format: 3633090
-    var value: Value?
+public struct TMEListingPhoto: Decodable {
+    public var key: Int? //--- format: 3633090
+    public var value: Value?
     
     init() {}
     
@@ -29,14 +29,14 @@ struct TMEListingPhoto: Decodable {
     }
 }
 
-struct Value: Decodable {
-    var photoId: Int?
-    var thumbnail: String?
-    var list: String?
-    var medium: String?
-    var gallery: String?
-    var large: String?
-    var fullSize: String?
+public struct Value: Decodable {
+    public var photoId: Int?
+    public var thumbnail: String?
+    public var list: String?
+    public var medium: String?
+    public var gallery: String?
+    public var large: String?
+    public var fullSize: String?
     
     init() {}
     

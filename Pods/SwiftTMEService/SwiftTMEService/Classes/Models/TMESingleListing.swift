@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct TMESingleListing: Decodable {
-    var listingId: Int? //--- format: 6866235
-    var title: String?
-    var subtitle: String?
-    var category: String?
-    var categoryPath: String?
-    var startPrice: Double?
-    var startDate: String?
-    var pictureHref: String?
-    var isNew: Bool?
+public struct TMESingleListing: Decodable {
+    public var listingId: Int? //--- format: 6866235
+    public var title: String?
+    public var subtitle: String?
+    public var category: String?
+    public var categoryPath: String?
+    public var startPrice: Double?
+    public var startDate: String?
+    public var pictureHref: String?
+    public var isNew: Bool?
     
     init() {}
     

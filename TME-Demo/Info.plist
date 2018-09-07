@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>TMEConsumerKey</key>
+	<string>A1AC63F0332A131A78FAC304D007E7D1</string>
+	<key>TMEConsumerSecret</key>
+	<string>EC7F18B17A062962C6930A8AE88B16C7&amp;</string>
 </dict>
 </plist>

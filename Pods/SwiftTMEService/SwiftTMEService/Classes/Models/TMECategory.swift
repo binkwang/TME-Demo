@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct TMECategory: Decodable {
-    var name: String?
-    var number: String? //--- format: 0001-0268-0269-
-    var path: String?
-    var isLeaf: Bool?
-    var subcategories: [TMECategory]?
+public struct TMECategory: Decodable {
+    public var name: String?
+    public var number: String? //--- format: 0001-0268-0269-
+    public var path: String?
+    public var isLeaf: Bool?
+    public var subcategories: [TMECategory]?
     
     init() {}
     
@@ -42,7 +42,7 @@ struct TMECategory: Decodable {
         case subcategories = "Subcategories"
     }
     
-    var id: String { //--- used for listing searching, format: 0269
+    public var id: String { //--- used for listing searching, format: 0269
         var id = ""
         if let number = number, !(number.isEmpty) {
             let numberComponent: [String] = number.components(separatedBy: "-")

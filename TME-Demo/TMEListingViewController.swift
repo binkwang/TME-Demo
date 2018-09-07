@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTMEService
 
 internal let kTMEListingViewControllerIdentifier = "TMEListingViewController"
 

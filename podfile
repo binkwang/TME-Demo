@@ -1,0 +1,10 @@
+source 'https://github.com/hanmbink/bink-private-specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+platform :ios, '9.0'
+
+target 'TME-Demo' do
+  pod 'SwiftTMEService'
+end
+
