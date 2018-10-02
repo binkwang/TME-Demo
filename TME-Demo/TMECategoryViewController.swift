@@ -37,6 +37,9 @@ class TMECategoryViewController: UITableViewController {
         let nib = UINib.init(nibName: kTMECategoryTableViewCellNibName, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: kTMECategoryTableViewCellReuseIdentifier)
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        
         if isRootCategoryView {
             
             TMEService.shared.fetchCategories(success: { [weak self] (category) in
@@ -87,9 +90,9 @@ extension TMECategoryViewController
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 44
+//    }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
@@ -119,6 +122,7 @@ extension TMECategoryViewController
             fatalError("The dequeued cell is not an instance of SelectedPlaceCell.")
         }
         cell.nameLabel.text = category?.subcategories?[indexPath.row].name
+        cell.nameLabel.numberOfLines = 0
         
         if let isLeaf = category?.subcategories?[indexPath.row].isLeaf, isLeaf {
             cell.infoLabel.text = "listing"
