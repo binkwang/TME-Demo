@@ -43,11 +43,11 @@ class TMECategoryViewController: UITableViewController {
         if isRootCategoryView {
             
             TMEService.shared.fetchCategories(success: { [weak self] (category) in
-                guard let weakSelf = self else { return }
-                weakSelf.category = category
+                guard let strongSelf = self else { return }
+                strongSelf.category = category
             }) { [weak self] (error) in
-                guard let weakSelf = self else { return }
-                weakSelf.showAlert("ERROR", "\(error.localizedDescription)")
+                guard let strongSelf = self else { return }
+                strongSelf.showAlert("ERROR", "\(error.localizedDescription)")
             }
         }
     }
